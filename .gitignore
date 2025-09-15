@@ -1,0 +1,24 @@
+# BlueJ project files
+*.ctxt
+*.pkg
+*.class
+
+# BlueJ settings
+bluej.pkg
+bluej.preferences
+
+# Editor/IDE settings
+*.iml
+.idea/
+.vscode/
+
+# Build artifacts
+bin/
+out/
+dist/
+*.jar
+
+# OS-spezifische Dateien
+.DS_Store
+Thumbs.db
+
