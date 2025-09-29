@@ -3,7 +3,7 @@
  * Diese Klasse modelliert einen Unterrichtsgegenstand
  * an einer HTL oder Kolleg
  *
- * @author  Andreas Hohenauer
+ * @author HOA
  * @version 1.0
  */
 public class Unterrichtsfach

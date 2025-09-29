@@ -68,8 +68,6 @@ public class Auto {
         // Achtung !!!!!!!!!!!!!!!!
         // =  ... Zuweisung
         // == ... Vergleich
-        
-        
     }
     
     
