@@ -52,7 +52,7 @@ public class Auto {
      * !false == true
      */
     public void setKilometer(int kilometer) {
-        if (kilometer >= 0) {
+        if (kilometer >= 0 && kilometer < 1_000_000) {
             this.kilometer = kilometer;
         } else {
             System.out.println("FEHLER: ungültige Kilometer");
