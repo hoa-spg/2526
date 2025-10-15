@@ -1,17 +1,16 @@
 public class Auto {
     
-    // (Objekt-)Eigenschaften
-    // Attribute
-    // Instanzvariablen
     private String marke;
     private int kilometer;
     private boolean automatik;
+    private double tankFuellstand; // l Benzin im Tank
     
     // Parameterloser Konstruktor
     public Auto() {
         setMarke("Mazda");
         setKilometer(10);
         setAutomatik(true);
+        this.tankFuellstand = 10.0;
     }
     
     // Konstruktor mit Parametern
@@ -19,6 +18,7 @@ public class Auto {
         setMarke(marke);
         setKilometer(kilometer);
         setAutomatik(automatik);
+        this.tankFuellstand = 10.0;
     }
     
     // Methoden
@@ -27,7 +27,6 @@ public class Auto {
     }
     
     public void setMarke(String marke) {
-        // if (marke != "") { // FALSCH !!!!
         if (marke != null) { 
             this.marke = marke;
         } else {
@@ -39,18 +38,7 @@ public class Auto {
         return this.kilometer;
     }
     
-    /*
-     * Vergleichsoperatoren
-     * ==       Gleichheit
-     * !=       Ungleichheit
-     * <        Kleiner
-     * <=       Kleiner/Gleich
-     * >        Größer
-     * >=       Größer/Gleich
-     * Anmerkung: ! entspricht der Negation
-     * !true == false
-     * !false == true
-     */
+ 
     public void setKilometer(int kilometer) {
         if (kilometer >= 0 && kilometer < 1_000_000) {
             this.kilometer = kilometer;
@@ -59,12 +47,47 @@ public class Auto {
         }
     }
     
-    public boolean getAutomatik() {
+    public boolean hasAutomatik() {
         return this.automatik;
     }
     
     public void setAutomatik(boolean automatik) {
         this.automatik = automatik;
+    }
+    
+    public double getTankFuellstand() {
+        return this.tankFuellstand;
+    }
+    
+    /**
+     * @parameter liter Anzahl an zu tankenden Litern
+     * @returns tatsächlich getankte Liter
+     */
+    public double tanken(double liter) {
+        if (liter > 0.0) {
+            if (liter < 50.0 - this.tankFuellstand) {
+                // if: weniger tanken, als noch in den Tank hinein geht
+                this.tankFuellstand = this.tankFuellstand + liter;
+                return liter;
+            } else { 
+                // else: volltanken
+                double getankt = 50.0 - this.tankFuellstand;
+                this.tankFuellstand = 50.0;
+                return getankt;
+            }
+        } else {
+            System.out.println("FEHLER: negativer Wert für getankte Liter");
+            return -1.0; 
+        }
+    }
+    
+    public boolean fahren() {
+        if (this.tankFuellstand > 1.0) {
+            this.tankFuellstand = this.tankFuellstand - 1.0;
+            return true;
+        } else {
+            return false;
+        }
     }
     
     public void printAuto() {
@@ -73,10 +96,6 @@ public class Auto {
         } else {
             System.out.println("Auto: " + getMarke() + ", km: " + getKilometer() + " (Handschaltung)");
         }
-        
-        // Achtung !!!!!!!!!!!!!!!!
-        // =  ... Zuweisung
-        // == ... Vergleich
     }
     
     

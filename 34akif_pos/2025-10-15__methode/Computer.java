@@ -1,4 +1,4 @@
-public class Computer {
+    public class Computer {
     
     private String modell;
     private double taktFrequenz; // [GHz]
