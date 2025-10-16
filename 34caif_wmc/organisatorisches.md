@@ -5,6 +5,10 @@
 - PLÜ/SLÜ (ca. 40%)
 - Projekt Webseite mit Layout (ca. 40%)
 
+## PLÜ Termin
+
+- 27. 11. 2026
+
 ## Ausblick SS
 
 - Abgabe Javascript
