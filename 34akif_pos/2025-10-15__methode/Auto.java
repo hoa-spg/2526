@@ -3,6 +3,7 @@ public class Auto {
     private String marke;
     private int kilometer;
     private boolean automatik;
+    
     private double tankFuellstand; // l Benzin im Tank
     
     // Parameterloser Konstruktor
@@ -67,7 +68,8 @@ public class Auto {
         if (liter > 0.0) {
             if (liter < 50.0 - this.tankFuellstand) {
                 // if: weniger tanken, als noch in den Tank hinein geht
-                this.tankFuellstand = this.tankFuellstand + liter;
+                // this.tankFuellstand = this.tankFuellstand + liter;
+                this.tankFuellstand += liter;
                 return liter;
             } else { 
                 // else: volltanken
@@ -83,19 +85,27 @@ public class Auto {
     
     public boolean fahren() {
         if (this.tankFuellstand > 1.0) {
-            this.tankFuellstand = this.tankFuellstand - 1.0;
+            // this.tankFuellstand = this.tankFuellstand - 1.0;
+            this.tankFuellstand -= 1.0;
             return true;
         } else {
             return false;
         }
     }
     
-    public void printAuto() {
+    public String toString() {
+        String str = "Auto: ";
         if (automatik == true) { // if-Bedingung
-            System.out.println("Auto: " + getMarke() + ", km: " + getKilometer() + " (Automatik)");
+            str += getMarke() + ", km: " + getKilometer() + " (Automatik)";
         } else {
-            System.out.println("Auto: " + getMarke() + ", km: " + getKilometer() + " (Handschaltung)");
+            str += getMarke() + ", km: " + getKilometer() + " (Handschaltung)";
         }
+        return str;
+    }
+    
+    public void printAuto() {
+        // System.out.println(this.toString());
+        System.out.println(this);
     }
     
     
