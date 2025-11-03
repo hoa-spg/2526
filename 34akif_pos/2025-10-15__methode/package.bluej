@@ -2,10 +2,10 @@
 dependency1.from=AutoTest
 dependency1.to=Auto
 dependency1.type=UsesDependency
-editor.fx.0.height=996
-editor.fx.0.width=1417
-editor.fx.0.x=402
-editor.fx.0.y=56
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
 objectbench.height=147
 objectbench.width=1568
 package.divider.horizontal=0.6
