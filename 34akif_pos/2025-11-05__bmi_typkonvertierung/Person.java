@@ -68,6 +68,32 @@ public class Person {
         return gewicht/(groesseInM*groesseInM);
     }
 
+    public void bmiAusgeben() {
+        System.out.println(this);
+        double bmi = bmiBerechnen();
+        System.out.print("BMI: " + bmi + ", ");
+        if (maennlich) {
+            if (bmi < 20) {
+                System.out.println("Untergewicht");
+            } else { // bmi >= 20
+                if (bmi < 25) {
+                    System.out.println("Normalgewicht");
+                } else {
+                    System.out.println("Uebergewicht");
+                }
+            }
+        } else {
+            if (bmi < 19) {
+                System.out.println("Untergewicht");
+            } else if (bmi < 24) {
+                System.out.println("Normalewicht");
+            } else {
+                System.out.println("Uebergewicht");
+            }
+        
+        }
+    }
+    
     public String toString() {
         return "Name='" + name + '\'' +
                 ", Geschlecht=" + (maennlich ? "männlich" : "weiblich") +
