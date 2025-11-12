@@ -2,11 +2,6 @@ import javax.swing.*;
 import javax.swing.border.CompoundBorder;
 import java.awt.*;
 
-/**
- * Autor:     SLM 2022-10-03
- * Adaptiert: CHA 2022-10-06
- */
-
 public class Bildschirm {
 
     private static final String TITLE                   = "Der Spengermat\u2122 - \u00A9 2022 by SLM";

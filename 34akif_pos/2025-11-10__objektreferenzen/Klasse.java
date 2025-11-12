@@ -29,7 +29,7 @@ public class Klasse {
     /**
      * TODO Rueckgabewert boolean: Inskribtion erfolreich
      */
-    public void inskribieren(Student neu) {
+    public boolean inskribieren(Student neu) {
         if (neu != null) {
             if (this.stud1 == null) {
                 this.stud1 = neu;
@@ -39,8 +39,13 @@ public class Klasse {
                 this.stud3 = neu;
             } else {
                 System.out.println("Klasse voll, kann nicht inskribieren");
+                return false;
             }
+        } else {
+            System.out.println("FEHLER: ungueltiger Student");
+            return false;
         }
+        return true;
     }
     
     /**
