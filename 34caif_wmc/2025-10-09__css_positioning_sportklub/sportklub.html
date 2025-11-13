@@ -6,75 +6,195 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Übungsseite: Wiener Sportklub">
     <title>Übungsseite: Wiener Sportclub</title>
-    <!-- External layout files. Default is layout1. To try another layout, change the href below to layout2.css or layout3.css -->
-    <!-- <link rel="stylesheet" href="css/layout1.css"> -->
-    <!-- <link rel="stylesheet" href="css/layout2.css"> -->
-    <!-- <link rel="stylesheet" href="css/layout3.css"> -->
-    <!-- <link rel="stylesheet" href="css/layout4.css"> -->
-    <link rel="stylesheet" href="css/layout_new.css">
+    <link id="cssLink" rel="stylesheet" href="css/css_v1.css">
 </head>
 
 <body>
     <header>
-        <div class="header-inner">
-            <span class="brand">Wiener Sportclub</span>
-            <!-- checkbox toggle for CSS-only burger menu -->
-            <input type="checkbox" id="nav-toggle">
-            <label for="nav-toggle" aria-hidden="true">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+        <span>Wiener Sportclub</span>
+        <form class="css-controls">
+            <select id="cssVersion" onchange="switchCSS()" aria-label="CSS Version auswählen">
+                <option value="0">Gar kein CSS</option>
+                <option value="1">CSS Version 1</option>
+                <option value="2">CSS Version 2</option>
+                <option value="3">CSS Version 3</option>
+                <option value="4">CSS Version 4</option>
+                <option value="5">CSS Version 5</option>
+                <option value="6">CSS Version 6</option>
+            </select>
+            <label class="theme-toggle">
+                <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+                <span class="theme-slider"></span>
             </label>
-            <nav id="nav-menu">
-                <ul>
-                    <li><a href="#verein">Verein</a></li>
-                    <li><a href="#sektionen">Sektionen</a></li>
-                    <li><a href="#spieler">Spieler</a></li>
-                    <li><a href="#footer">Newsletter</a></li>
-                </ul>
-            </nav>
-        </div>
-        <img src="wsc_logo.png" alt="Wiener Sportclub Logo">
+        </form>
+
+        <input type="checkbox" id="nav-toggle">
+        <label for="nav-toggle" aria-hidden="true">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <nav id="nav-menu">
+            <ul class="nav-items">
+                <li><a href="#verein">Verein</a></li>
+                <li><a href="#geschichte">Geschichte</a></li>
+                <li><a href="#sektionen">Sektionen</a></li>
+                <li><a href="#spieler">Spieler</a></li>
+                <li><a href="#statistiken">Statistiken</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+                <li><a href="#footer">Newsletter</a></li>
+            </ul>
+        </nav>
+
     </header>
     <main>
         <h1>Übungsseite: Wiener Sportclub</h1>
         <section id="verein">
             <h2>Verein</h2>
-            <p>Der <strong>Wiener Sport-Club</strong> (oft kurz „WSC“ oder einfach nur „Sport-Club“ genannt) ist einer
-                der
-                ältesten Sportvereine Österreichs. Der Verein ging aus dem am <em>24. Februar 1883</em> gegründeten
-                Wiener Cyclistenclub
-                hervor. Seit Sommer 2017 ist die Fußballsektion nach über 15 Jahren Abwesenheit neben den Sektionen
-                Fechten,
-                Rad, Laufen, Squash, Schwimmen & Wasserball wieder in den Gesamtverein eingegliedert. </p>
+            <div class="content-with-image">
+                <div class="text-content">
+                    <p>Der <strong>Wiener Sport-Club</strong> (oft kurz „WSC" oder einfach nur „Sport-Club" genannt) ist
+                        einer
+                        der ältesten Sportvereine Österreichs. Der Verein ging aus dem am <em>24. Februar 1883</em>
+                        gegründeten
+                        Wiener Cyclistenclub hervor. Seit Sommer 2017 ist die Fußballsektion nach über 15 Jahren
+                        Abwesenheit neben den Sektionen
+                        Fechten, Rad, Laufen, Squash, Schwimmen & Wasserball wieder in den Gesamtverein eingegliedert.
+                    </p>
 
+                    <p>Mit über 140 Jahren Geschichte gehört der WSC zu den traditionsreichsten Sportvereinen Europas.
+                        Der Verein hat seinen Sitz im 2. Wiener Gemeindebezirk, Leopoldstadt, und verfügt über modernste
+                        Sportanlagen und ein Vereinsheim mit über 500 Mitgliedern.</p>
+                </div>
+                <img src="https://via.placeholder.com/300x200/4a90e2/ffffff?text=WSC+Logo" alt="Wiener Sportclub Logo"
+                    class="section-image">
+            </div>
+        </section>
+
+        <section id="geschichte">
+            <h2>Geschichte des Vereins</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year">1883</div>
+                    <div class="event">Gründung als Wiener Cyclistenclub</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">1896</div>
+                    <div class="event">Umbenennung zu Wiener Sport-Club</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">1920</div>
+                    <div class="event">Erste Fußball-Meisterschaft</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2017</div>
+                    <div class="event">Wiedereingliederung der Fußballsektion</div>
+                </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1677679124642-83bed7be191a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGhpc3RvcmljJTIwc3BvcnRzJTIwY2x1YnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+                alt="Historisches Vereinsfoto" class="history-image">
         </section>
 
         <section id="sektionen">
             <h2>Sektionen</h2>
-
             <p>Der Wiener Sportklub gliedert sich in folgende Sektionen:</p>
-            <ul>
-                <li>Fechten</li>
-                <li>Rad</li>
-                <li>Wasserball</li>
-                <li>Schwimmen</li>
-                <li>Squash</li>
-                <li>Fußball</li>
-                <li>Laufen</li>
-                <li>Eishockey</li>
-                <li><a href="https://de.wikipedia.org/wiki/P%C3%A9tanque">Petanque</a></li>
-                <li>Tischfußball</li>
-                <li>EMCA</li>
-            </ul>
+
+            <div class="sections-grid">
+                <div class="section-card">
+                    <h3>Fußball</h3>
+                    <p>Unsere Kampfmannschaft spielt in der Regionalliga Ost und trägt stolz die Tradition des Vereins
+                        weiter. Mit modernstem Training und großem Engagement kämpfen wir um jeden Punkt.</p>
+                    <img src="https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=100&q=80"
+                        alt="Fußball">
+                </div>
+                <div class="section-card">
+                    <h3>Schwimmen & Wasserball</h3>
+                    <p>Von der Nachwuchsförderung bis zum Leistungssport bieten wir Training für alle Altersgruppen.
+                        Unsere Wasserballer und Schwimmer erreichen regelmäßig österreichweite Erfolge.</p>
+                    <img src="https://images.unsplash.com/photo-1648251498866-c5333fadb32a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3dpbW1pbmclMjB3YXRlciUyMGJhbGx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=150"
+                        alt="Schwimmen">
+                </div>
+                <div class="section-card">
+                    <h3>Fechten</h3>
+                    <p>Als olympische Disziplin mit langer Vereinstradition trainieren unsere Fechter auf höchstem
+                        Niveau. Eleganz, Präzision und Schnelligkeit stehen im Mittelpunkt dieser faszinierenden
+                        Kampfkunst.</p>
+                    <img src="https://plus.unsplash.com/premium_photo-1664304787831-91d68314450c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=150"
+                        alt="Fechten">
+                </div>
+                <div class="section-card">
+                    <h3>Radsport</h3>
+                    <p>Seit der Vereinsgründung 1883 als Cyclistenclub ist der Radsport unsere Gründungsdisziplin. Von
+                        gemütlichen Ausfahrten bis zu ambitionierten Rennen bieten wir für jeden Radfahrer das passende
+                        Training.</p>
+                    <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=100&q=80"
+                        alt="Radsport">
+                </div>
+                <div class="section-card">
+                    <h3>Laufen</h3>
+                    <p>Unsere Laufgruppe trainiert regelmäßig für Marathons, Halbmarathons und Volksläufe in ganz
+                        Österreich. Gemeinsam macht Laufen mehr Spaß und motiviert zu neuen persönlichen Bestleistungen.
+                    </p>
+                    <img src="https://images.unsplash.com/photo-1571008887538-b36bb32f4571?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=100&q=80"
+                        alt="Laufen">
+                </div>
+                <div class="section-card">
+                    <h3>Squash</h3>
+                    <p>Diese dynamische Racket-Sportart kombiniert Schnelligkeit, Ausdauer und taktisches Geschick.
+                        Unsere modernen Courts und erfahrenen Trainer bieten optimale Bedingungen für Anfänger und
+                        Fortgeschrittene.</p>
+                    <img src="https://plus.unsplash.com/premium_photo-1707841330860-e98de313301a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=150"
+                        alt="Squash">
+                </div>
+            </div>
+
+            <div class="additional-sections">
+                <h3>Weitere Sektionen</h3>
+                <ul>
+                    <li>Eishockey</li>
+                    <li><a href="https://de.wikipedia.org/wiki/P%C3%A9tanque">Pétanque</a></li>
+                    <li>Tischfußball</li>
+                    <li>EMCA (Europäische Minigolf Club Association)</li>
+                </ul>
+            </div>
         </section>
 
         <aside>
-            <strong>Pétanque</strong> (okzitanisch petanca [peˈtaŋkɔ]) ist ein den Boule-Spielen zugeordneter
-            Präzisionssport. Dabei versuchen
-            zwei Mannschaften, eine bestimmte Anzahl von Kugeln so nahe wie möglich an eine vorher ausgeworfene
-            Zielkugel zu
-            werfen.
+            <div class="sidebar-content">
+                <h3>Wussten Sie schon?</h3>
+                <div class="fact-box">
+                    <strong>Pétanque</strong> (okzitanisch petanca [peˈtaŋkɔ]) ist ein den Boule-Spielen zugeordneter
+                    Präzisionssport. Dabei versuchen zwei Mannschaften, eine bestimmte Anzahl von Kugeln so nahe wie
+                    möglich an eine vorher ausgeworfene
+                    Zielkugel zu werfen.
+                </div>
+
+                <div class="quick-stats">
+                    <h4>Vereinsstatistiken</h4>
+                    <div class="stat">
+                        <span class="number">500+</span>
+                        <span class="label">Mitglieder</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">11</span>
+                        <span class="label">Sektionen</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">140+</span>
+                        <span class="label">Jahre Geschichte</span>
+                    </div>
+                </div>
+
+                <div class="social-media">
+                    <h4>Folgen Sie uns</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link facebook">📘 Facebook</a>
+                        <a href="#" class="social-link instagram">📷 Instagram</a>
+                        <a href="#" class="social-link twitter">🐦 Twitter</a>
+                    </div>
+                </div>
+            </div>
         </aside>
 
         <section id="spieler">
@@ -93,6 +213,7 @@
                         <th>Name</th>
                         <th>Position</th>
                     </tr>
+
                 </thead>
                 <tbody>
                     <tr>
@@ -216,31 +337,210 @@
             </table>
         </section>
 
+        <section id="statistiken">
+            <h2>Saisonstatistiken</h2>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Fußball Kampfmannschaft</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Spiele</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Siege</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Unentschieden</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Niederlagen</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Top Torschützen</h3>
+                    <ol class="top-scorer-list">
+                        <li>Felix Kerber - 8 Tore</li>
+                        <li>Mario Vucenovic - 6 Tore</li>
+                        <li>Gerasim Pavlovic - 5 Tore</li>
+                        <li>Miroslav Beljan - 4 Tore</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontakt">
+            <h2>Kontakt & Anfahrt</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Vereinsadresse</h3>
+                    <address>
+                        Wiener Sport-Club<br>
+                        Prater Hauptallee 124<br>
+                        1020 Wien, Österreich
+                    </address>
+
+                    <div class="contact-details">
+                        <p><strong>Telefon:</strong> +43 1 123 45 67</p>
+                        <p><strong>Email:</strong> office@wienersportclub.at</p>
+                        <p><strong>Website:</strong> www.wienersportclub.at</p>
+                    </div>
+
+                    <div class="opening-hours">
+                        <h4>Öffnungszeiten Vereinsheim</h4>
+                        <ul>
+                            <li>Mo-Fr: 16:00 - 22:00</li>
+                            <li>Sa-So: 09:00 - 20:00</li>
+                            <li>Feiertage: geschlossen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="map-placeholder">
+                    <div class="map-box">
+                        <img src="https://via.placeholder.com/400x300/95a5a6/ffffff?text=Karte+Prater+Hauptallee"
+                            alt="Karte zur Vereinsadresse">
+                        <p class="map-caption">📍 Unser Vereinsheim im Wiener Prater</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <a href="#">Go to top!</a>
+    <div class="back-to-top">
+        <a href="#nav-menu" class="top-link">⬆ Nach oben</a>
+    </div>
 
-    <footer id="footer">
+    <footer>
+        <div class="newsletter-section">
+            <h2>Newsletter Anmeldung</h2>
+            <p>Bleiben Sie über Vereinsnews und Veranstaltungen informiert!</p>
+            <form class="newsletter-form">
+                <label for="newslname">
+                    Name: <input type="text" id="newslname" name="name" placeholder="Ihr Name">
+                </label>
 
-        <h2>Anmeldung Newsletter</h2>
-        <form>
-            <label for="newslname">Name:</label>
-            <input type="text" id="newslname" name="name">
+                <label for="email">
+                    Email: <input type="email" id="email" name="email" placeholder="ihre.email@example.com">
+                </label>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="check" name="check">
+                    <span class="checkmark"></span>
+                    Ich bin kein Roboter
+                </label>
 
-            <label for="check">Ich bin kein Roboter:</label>
-            <input type="checkbox" id="check" name="check">
-            <button>Anmelden!</button>
-        </form>
+                <button type="submit" class="submit-btn">📧 Jetzt anmelden!</button>
+            </form>
+        </div>
+
+        <div class="footer-info">
+            <div class="footer-about">
+                <h3>Wiener Sport-Club</h3>
+                <p>Tradition seit 1883</p>
+                <p>© 2024 Wiener Sport-Club</p>
+            </div>
+
+            <div class="footer-quick-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#verein">Über uns</a></li>
+                    <li><a href="#sektionen">Sektionen</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="#">Impressum</a></li>
+                    <li><a href="#">Datenschutz</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
 
     <script>
-        const btn = document.querySelector("button");
-        btn.addEventListener('click', () => {
-            alert(document.getElementById("newslname").value + ' angemeldet!');
-        })
+        // Newsletter Form Handler
+        const btn = document.querySelector(".submit-btn");
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const name = document.getElementById("newslname").value;
+            const email = document.getElementById("email").value;
+            const isChecked = document.getElementById("check").checked;
+
+            if (name && email && isChecked) {
+                alert(name + ' erfolgreich für den Newsletter angemeldet!');
+                document.querySelector('.newsletter-form').reset();
+            } else {
+                alert('Bitte füllen Sie alle Felder aus und bestätigen Sie, dass Sie kein Roboter sind.');
+            }
+        });
+
+        // CSS Version Switcher
+        function switchCSS() {
+            const version = document.getElementById('cssVersion').value;
+            const linkElement = document.getElementById('cssLink');
+
+            if (version === '0') {
+                // Gar kein CSS - entferne das CSS
+                linkElement.href = '';
+                linkElement.disabled = true;
+            } else {
+                // CSS Version laden
+                linkElement.href = `css/css_v${version}.css`;
+                linkElement.disabled = false;
+            }
+        }
+
+        // Theme Toggle Function
+        function toggleTheme() {
+            const htmlElement = document.documentElement;
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            // Add transition class for smooth theme switching
+            document.body.classList.add('theme-transition');
+            setTimeout(() => {
+                document.body.classList.remove('theme-transition');
+            }, 500);
+        }
+
+        // Initialize Theme on Page Load
+        document.addEventListener('DOMContentLoaded', function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const themeToggle = document.getElementById('themeToggle');
+
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            themeToggle.checked = savedTheme === 'dark';
+        });
+
+        // Initialize CSS Version on Page Load
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const savedVersion = localStorage.getItem('cssVersion') || '1';
+            const versionSelect = document.getElementById('cssVersion');
+            const linkElement = document.getElementById('cssLink');
+
+            versionSelect.value = savedVersion;
+
+            // Load CSS or disable it based on version
+            if (savedVersion === '0') {
+                linkElement.disabled = true;
+            } else {
+                linkElement.disabled = false;
+                linkElement.href = `css/css_v${savedVersion}.css`;
+            }
+
+            // Save version when changed
+            versionSelect.addEventListener('change', function () {
+                localStorage.setItem('cssVersion', this.value);
+            });
+        });
+
     </script>
 
 </body>
