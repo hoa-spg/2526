@@ -41,6 +41,7 @@ public class Klasse {
                 System.out.println("Klasse voll, kann nicht inskribieren");
                 return false;
             }
+        
         } else {
             System.out.println("FEHLER: ungueltiger Student");
             return false;
@@ -52,7 +53,19 @@ public class Klasse {
      * Entfernt alle Referenzen auf den uebergebenen Studenten
      */
     public void entfernen(Student stud) {
-        // TODO
+        if (stud != null) {
+            if (stud1 == stud) {
+                stud1 = null;
+            } else if (stud2 == stud) {
+                stud2 = null;
+            } else if (stud3 == stud) {
+                stud3 = null;
+            } else {
+                System.out.println("Student nicht in Klasse.");
+            }
+        } else {
+            System.out.println("FEHLER: parameter ist null!");
+        }
     }
     
     /**
@@ -60,8 +73,62 @@ public class Klasse {
      * und gib Referenz auf diesen Studenten als Rueckgabewert zurueck.
      */
     public Student entfernen(String name) {
-        // TODO
+        if (name != null) {
+            if (stud1 != null && stud1.getName().equals(name)) {
+                Student tmp = stud1;
+                stud1 = null;
+                return tmp;
+            } else if (stud2 != null && stud2.getName().equals(name)) {
+                Student tmp = stud2;
+                stud2 = null;
+                return tmp;
+            } else if (stud3 != null && stud3.getName().equals(name)) {
+                Student tmp = stud3;
+                stud3 = null;
+                return tmp;
+            } else {
+                System.out.println("Kein Student mit Name " + name + " vorhanden");
+            }
+        } else {
+            System.out.println("Fehler: ungueltiger Name");
+        }
         return null;
+    }
+    
+    public int anzahlStudenten() {
+        int anzahl = 0;
+        if (stud1 != null) {
+            anzahl++;
+        } 
+        if (stud2 != null) {
+            anzahl++;
+        } 
+        if (stud3 != null) {
+            anzahl++;
+        }
+        return anzahl;
+    }
+    
+    public double durchschnittsAlter() {
+        int summeGeburtsjahr = 0;
+        
+        if (stud1 != null) {
+            summeGeburtsjahr += stud1.getGeburtsjahr();
+        } 
+        if (stud2 != null) {
+            summeGeburtsjahr += stud2.getGeburtsjahr();
+        } 
+        if (stud3 != null) {
+            summeGeburtsjahr += stud3.getGeburtsjahr();
+        }
+        int anzahl = anzahlStudenten();
+        if (anzahl > 0) {
+            double durchschnittsGeburtsjahr = (double)summeGeburtsjahr / anzahl;
+            return 2025.0 - durchschnittsGeburtsjahr;
+        } else {
+            System.out.println("FEHLER: keine Studenten vorhanden.");
+            return -1.0; // magic value
+        }
     }
     
     public String toString() {
