@@ -1,0 +1,168 @@
+/* 
+ * CSS Version 4: Responsive Design & Sticky Navigation
+ * Basiert auf css_v3.css und fügt Media Queries sowie Sticky Navigation hinzu
+ */
+
+@import url('./css_v3.css');
+
+/* Mobile Navigation Toggle - hamburger bars korrigiert */
+#nav-toggle {
+    display: none;
+}
+
+label[for="nav-toggle"] {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+}
+
+label[for="nav-toggle"] .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+    display: block;
+}
+
+#nav-menu ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+/* ---- Grid-Layout -------------------------*/
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    align-items: start;
+}
+
+main>h1 {
+    grid-column: 1 / -1;
+}
+
+main>section {
+    grid-column: 1 / -1;
+}
+
+#sektionen {
+    grid-column: 1;
+}
+
+main>aside {
+    grid-row-start: 4;
+    grid-column: 2;
+}
+
+
+
+@media screen and (max-width: 800px) {
+
+    /* Grid Layout für Mobile komplett deaktivieren */
+    body {
+        display: block !important;
+        grid-template-areas: none !important;
+        grid-template-columns: none !important;
+        grid-template-rows: none !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: none !important;
+    }
+
+    header {
+        position: relative;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    label[for="nav-toggle"] {
+        display: flex !important;
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+    }
+
+    #nav-menu {
+        display: none;
+        width: 100%;
+        background: #2c3e50;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem 0;
+        z-index: 1000;
+    }
+
+    #nav-toggle:checked~#nav-menu {
+        display: block !important;
+    }
+
+    .nav-items {
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+    }
+
+    .nav-items li {
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-items a {
+        display: block;
+        padding: 1rem;
+        border-radius: 0;
+    }
+
+    main {
+        display: block !important;
+        grid-area: none !important;
+        max-width: none !important;
+        min-width: auto !important;
+    }
+
+    main>h1,
+    main>section {
+        width: 100%;
+    }
+
+    .sidebar-content {
+        position: static;
+        order: -1;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer-section {
+        min-width: auto;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: 0.5rem;
+    }
+
+}

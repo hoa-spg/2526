@@ -1,0 +1,835 @@
+/* 
+ * CSS Version 5: Animationen & Transitions
+ * Basiert auf css_v4.css und fügt CSS-Animationen und Übergangseffekte hinzu
+ */
+
+@import url('./css_v4.css');
+
+/* Basis-Animationsvariablen für konsistente Timing */
+:root {
+    --transition-fast: 0.2s ease-out;
+    --transition-normal: 0.3s ease-out;
+    --transition-slow: 0.5s ease-out;
+    --bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Loading Animation für die Seite */
+body {
+    animation: pageLoad 0.6s ease-out;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sanfte Hover-Animationen für stat-cards */
+@keyframes statCardWobble {
+
+    0%,
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.02) rotate(0deg);
+    }
+}
+
+.stat-card:hover {
+    animation: statCardWobble 0.3s ease-in-out;
+    box-shadow: 0 10px 30px rgba(52, 73, 94, 0.3);
+}
+
+.stat-number {
+    transition: all var(--transition-normal);
+}
+
+.stat-card:hover .stat-number {
+    transform: scale(1.1);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Timeline Animationen */
+.timeline-item {
+    transition: all var(--transition-normal);
+}
+
+.timeline-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Team Card Animationen */
+.team-card {
+    transition: all var(--transition-normal);
+}
+
+.team-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Card Animationen */
+.section-card {
+    transition: all var(--transition-normal);
+}
+
+.section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Hover Animationen */
+button {
+    transition: all var(--transition-fast);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation Link Animationen */
+.nav-items a {
+    transition: all var(--transition-fast);
+}
+
+.nav-items a:hover {
+    transform: scale(1.05);
+}
+
+/* Form Input Animationen */
+input[type="text"],
+input[type="email"],
+select {
+    transition: all var(--transition-fast);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Header Animation beim Scrollen */
+header {
+    transition: all var(--transition-normal);
+}
+
+/* Social Link Hover Animationen */
+.social-link {
+    transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* Table Row Hover Animation */
+tr {
+    transition: all var(--transition-fast);
+}
+
+tr:hover {
+    transform: scale(1.01);
+}
+
+/* Image Hover Animationen */
+img {
+    transition: all var(--transition-normal);
+}
+
+img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Back to Top Button Animation */
+.back-to-top {
+    transition: all var(--transition-normal);
+    opacity: 0.7;
+}
+
+.back-to-top:hover {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* Fade-In Animation für Sections */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Pulse Animation für wichtige Elemente */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Floating Animation für aside */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Floating Animation nur auf Mobile anwenden - nicht auf Desktop mit Grid */
+@media (max-width: 800px) {
+    aside {
+        animation: float 4s ease-in-out infinite;
+    }
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Animationen */
+header {
+    transition: all var(--transition-normal);
+}
+
+/* Navigation Animationen - vereinfacht ohne störende Gradienten */
+.nav-items a {
+    transition: all var(--transition-normal);
+}
+
+.nav-items a:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* CSS Selector Animation */
+select {
+    transition: all var(--transition-normal);
+    transform-origin: center;
+}
+
+select:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+select:focus {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+}
+
+/* Main Content Animationen */
+main {
+    animation: slideInFromBottom 0.8s var(--smooth) 0.2s both;
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Überschrift Animationen */
+h1 {
+    position: relative;
+    overflow: hidden;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    from {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    to {
+        box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+    }
+}
+
+h2 {
+    position: relative;
+    transition: all var(--transition-normal);
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    transition: width var(--transition-slow);
+}
+
+h2:hover::after {
+    width: 100%;
+}
+
+/* Section Animationen */
+section {
+    transition: all var(--transition-normal);
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+section:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+
+section:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section:hover {
+    transform: translateY(-5px) rotate(0.5deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Statistik-Karten Animationen */
+.stat-card {
+    transition: all var(--transition-normal);
+    animation: bounceIn 0.6s var(--bounce) both;
+}
+
+.stat-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.stat-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.stat-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.stat-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-10deg);
+    }
+
+    50% {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes statCardWobble {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.02) rotate(0deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.stat-card:hover {
+    animation: statCardWobble 0.3s ease-in-out;
+    box-shadow: 0 10px 30px rgba(52, 73, 94, 0.3);
+}
+
+.stat-number {
+    transition: all var(--transition-normal);
+}
+
+.stat-card:hover .stat-number {
+    transform: scale(1.1);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Timeline Animationen */
+.timeline-item {
+    transition: all var(--transition-normal);
+    animation: slideInFromLeft 0.6s ease-out both;
+}
+
+.timeline-item:nth-child(odd) {
+    animation-name: slideInFromRight;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.timeline-item:hover {
+    transform: scale(1.02);
+    border-left-width: 8px;
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.2);
+}
+
+.timeline-year {
+    transition: all var(--transition-normal);
+}
+
+.timeline-item:hover .timeline-year {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+/* Sektions-Karten Animationen */
+@keyframes cardWobble {
+    0% {
+        transform: translateY(-8px) scale(1.03) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-8px) scale(1.03) rotate(-2deg);
+    }
+
+    75% {
+        transform: translateY(-8px) scale(1.03) rotate(3deg);
+    }
+
+    100% {
+        transform: translateY(-8px) scale(1.03) rotate(0deg);
+    }
+}
+
+.section-card:hover {
+    animation: cardWobble 0.6s ease-in-out;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.section-card:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Team-Karten erweiterte Animationen */
+.team-card {
+    transition: all var(--transition-normal);
+    animation: flipIn 0.6s ease-out both;
+}
+
+.team-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.team-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.team-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes flipIn {
+    from {
+        opacity: 0;
+        transform: perspective(400px) rotateY(-90deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(400px) rotateY(0deg);
+    }
+}
+
+@keyframes teamCardWobble {
+    0% {
+        transform: translateY(-10px) scale(1.02) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-10px) scale(1.02) rotate(-1deg);
+    }
+
+    75% {
+        transform: translateY(-10px) scale(1.02) rotate(2deg);
+    }
+
+    100% {
+        transform: translateY(-10px) scale(1.02) rotate(0deg);
+    }
+}
+
+.team-card:hover {
+    animation: teamCardWobble 0.8s ease-in-out;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.team-card img {
+    transition: all var(--transition-slow);
+}
+
+.team-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1) saturate(1.2);
+}
+
+.team-card-content {
+    transition: all var(--transition-normal);
+}
+
+.team-card:hover .team-card-content {
+    transform: translateY(-5px);
+}
+
+/* Tabellen Animationen */
+table {
+    animation: tableSlideIn 0.8s ease-out both;
+}
+
+@keyframes tableSlideIn {
+    from {
+        opacity: 0;
+        transform: rotateX(-15deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+
+tr {
+    transition: all var(--transition-fast);
+}
+
+tr:hover {
+    transform: scale(1.01);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    position: relative;
+    overflow: hidden;
+}
+
+th::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* Formular Animationen */
+form {
+    animation: formFadeIn 0.8s ease-out both;
+}
+
+@keyframes formFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+input[type="text"],
+input[type="email"] {
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    transform: scale(1.02);
+    animation: inputGlow 0.3s ease-out;
+}
+
+@keyframes inputGlow {
+    50% {
+        box-shadow: 0 0 20px rgba(52, 152, 219, 0.4);
+    }
+}
+
+button {
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    transition: all var(--transition-slow);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(-1px) scale(1.02);
+    transition: all 0.1s;
+}
+
+/* Sidebar Animationen - nur auf Mobile */
+@media (max-width: 800px) {
+    aside {
+        animation: sidebarSlideIn 0.8s ease-out 0.3s both;
+        transition: all var(--transition-normal);
+    }
+
+    aside:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+    }
+}
+
+@keyframes sidebarSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Desktop aside ohne störende Animationen */
+@media (min-width: 801px) {
+    aside {
+        transition: all var(--transition-normal);
+    }
+
+    aside:hover {
+        box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+    }
+}
+
+/* Footer Animationen */
+footer {
+    animation: footerSlideUp 0.8s ease-out 0.5s both;
+}
+
+@keyframes footerSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer-section {
+    transition: all var(--transition-normal);
+}
+
+.footer-section:hover {
+    transform: translateY(-5px);
+}
+
+/* Back to Top Button Animation */
+.top-link {
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.top-link:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(149, 165, 166, 0.4);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: translateY(-3px) scale(1.1);
+    }
+
+    50% {
+        transform: translateY(-5px) scale(1.15);
+    }
+}
+
+/* Icon Animationen */
+.icon-list li {
+    transition: all var(--transition-normal);
+}
+
+.icon-list li:hover {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(45deg, #ecf0f1, #d5dbdb);
+}
+
+/* Responsive Animation Anpassungen */
+@media screen and (max-width: 768px) {
+
+    /* Reduzierte Animationen für mobile Geräte */
+    section:hover {
+        transform: translateY(-2px);
+    }
+
+    .stat-card:hover {
+        transform: scale(1.02);
+    }
+
+    .team-card:hover {
+        transform: translateY(-5px);
+    }
+
+    button:hover {
+        transform: translateY(-2px) scale(1.02);
+    }
+
+    /* Mobile Navigation - Vereinfacht ohne problematische Overlapping-Animationen */
+    .nav-items a {
+        transition: all var(--transition-fast);
+    }
+
+    .nav-items a:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Performance-Optimierungen */
+.stat-card,
+.team-card,
+.timeline-item {
+    will-change: transform;
+}
+
+/* Accessibility: Respektiere reduced-motion Einstellungen */
+@media (prefers-reduced-motion: reduce) {
+
+    /* Alle Animationen deaktivieren */
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* Hover-Effekte beibehalten aber ohne Transformation */
+    .team-card:hover,
+    .stat-card:hover,
+    section:hover {
+        transform: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}

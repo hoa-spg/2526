@@ -53,6 +53,7 @@ public class AutoTest
         assertEquals(null, auto.getRueckbank());
         auto.einsteigen(p3);
         assertEquals(p3, auto.getRueckbank());
+        System.out.println(auto);
     }
 }
 
