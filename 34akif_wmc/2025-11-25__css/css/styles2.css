@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    padding: 5px;
+    margin: 5px;
+    color: darkblue;
+    background-color: lavender;
+    border-radius: 10px;
+    text-align: center;
+}
+
+article {
+    color: darkblue;
+    background-color: lightgrey;
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.specialarticle {
+    color: darkgreen;
+}
+
+a {
+    text-decoration: none;
+    color: darkmagenta;
+}
+
+a:hover {
+    text-decoration: underline;
+}

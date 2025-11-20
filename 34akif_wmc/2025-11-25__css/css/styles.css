@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: darkcyan;
+}
+
+div {
+    display: inline-block;
+    color: red;
+    border: 2px solid gold;
+    margin: 20px;
+    padding: 20px;
+    width: 150px;
+}
+
+.light {
+    color: lightcoral;
+    font-size: 1.5rem;
+}
+
+#bkif {
+    color: blue;
+}
+
+p {
+    font-size: 1rem;
+}
+
+strong {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
