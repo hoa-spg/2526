@@ -8,7 +8,7 @@ class Konto {
     public Konto() {
         setIban(generateIban());
         setUeberziehungsRahmen(1000);
-        this.saldo = saldo;
+        this.saldo = 0;
     }
 
     public Konto(String iban, int ueberziehungsRahmen, int saldo) {
@@ -40,15 +40,60 @@ class Konto {
     }
 
     public void setUeberziehungsRahmen(int ueberziehungsRahmen) {
-        if (ueberziehungsRahmen >= 0) {
+        if (ueberziehungsRahmen >= -this.saldo) {
             this.ueberziehungsRahmen = ueberziehungsRahmen;
         } else {
             System.out.println("FEHLER: ungueltiger Ueberziehungsrahmen");
         }
     }
+    
+    public void einzahlen(int betrag) {
+        if (betrag > 0) {
+            this.saldo += betrag;
+        } else {
+            System.out.println("FEHLER: ungueltiger Betrag: " + betrag);
+        }
+        
+    }
+    
+    public boolean abbuchen(int betrag) {
+        if (betrag > 0) {
+            if (this.saldo - betrag >= -this.ueberziehungsRahmen) {
+                this.saldo -= betrag;
+                return true;
+            } else {
+                System.out.println("FEHLER: " + betrag + " kann nicht abgebucht werden. Rahmen ueberzogen");
+                return false;
+            }
+        } else {
+            System.out.println("FEHLER: ungueltiger Betrag: " + betrag);
+            return false;
+        } 
+    }
 
-    public int getSaldo() {
+    public int kontostand() {
         return saldo;
+    }
+    
+    public static int runden(double wert) {
+        int gerundet = (int)wert;
+        wert -= gerundet;
+        // Im Zweifel bei numerischen Ungenauigkeiten aufrunden.
+        // Bei negativem Kontostand abrunden.
+        if (Math.abs(wert) >= 0.48) {
+            gerundet += wert > 0.0 ? 1 : -1;
+        }
+        return gerundet;
+    }
+    
+    public void berechneZinsen(double zinssatz) {
+        if (zinssatz >= 0.0 && zinssatz <= 0.2) {
+            double tmp = (1.0+zinssatz)*this.saldo;
+            // this.saldo = (int)(tmp);
+            this.saldo = Konto.runden(tmp);
+        } else {
+            System.out.println("FEHLER: ungueltiger Zinssatz: " + zinssatz);
+        }
     }
     
     private String generateIban() {

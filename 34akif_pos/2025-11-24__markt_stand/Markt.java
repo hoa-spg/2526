@@ -41,8 +41,8 @@ public class Markt {
         if (neu == null) {
             System.out.println("FEHLER: neuer Stand ist null.");
             return false;
-        }
-        
+        } 
+            
         if (neu.isEssen() && this.anzahlEssenStende() > 0) {
             System.out.println("FEHLER: keine weiteren Essensstaende moeglich.");
             return false;
@@ -63,6 +63,7 @@ public class Markt {
         }
         System.err.println("Fehler: Kein freien Platz vorhanden");
         return false;
+        
     }
     
     public Stand standEntfernen(String name) {
@@ -71,6 +72,7 @@ public class Markt {
             return null;
         }
         
+        // name != null
         Stand tmp = null;
         if (pos1 != null && pos1.getName().equals(name)) {
             tmp = pos1;
