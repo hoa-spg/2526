@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+            background-color: lightgray;
+            border: 2px solid gray;
+            border-radius: 10px;
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            margin: 30px;
+        }
+
+        #menu {
+            display: block;
+            position: sticky;
+            top: 5px;
+            background-color: darkblue;
+            color: lightgray;
+            width: unset;
+            height: 50px;
+        }
+
+
+        #fixed {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 50px;
+            height: 100px;
+            background-color: burlywood;
+        }
+
+        #relative {
+            position: relative;
+            left: 25px;
+            top: 150px;
+            background-color: darkseagreen;
+            z-index: -1;
+        }
+
+        #e {
+            position: relative;
+            z-index: -3;
+        }
+    </style>
+</head>
+
+<body>
+    <span id="menu">Menü: Home Impressum Kontak</span>
+    <span>c</span>
+    <span id="relative">relative</span>
+
+    <span>d</span>
+    <span id="e">e</span>
+    <span id="fixed">Quicklinks: Checkout Buy Cart</span>
+
+</body>
+
+</html>
