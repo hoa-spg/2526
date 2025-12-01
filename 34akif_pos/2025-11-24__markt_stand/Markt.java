@@ -73,21 +73,21 @@ public class Markt {
         }
         
         // name != null
-        Stand tmp = null;
+        Stand entfernterStand = null; 
         if (pos1 != null && pos1.getName().equals(name)) {
-            tmp = pos1;
+            entfernterStand = pos1;
             pos1 = null;        
         } else if (pos2 != null && pos2.getName().equals(name)) {
-            tmp = pos2;
+            entfernterStand = pos2;
             pos2 = null;        
         } else if (pos3 != null && pos3.getName().equals(name)) {
-            tmp = pos3;
+            entfernterStand = pos3;
             pos3 = null;
         } else if (pos4 != null && pos4.getName().equals(name)) {
-            tmp = pos4;
+            entfernterStand = pos4;
             pos4 = null;            
         }
-        return tmp;
+        return entfernterStand;
     }
 
     public int anzahlStaende(){
