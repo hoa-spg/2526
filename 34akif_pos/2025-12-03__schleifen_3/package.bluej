@@ -2,9 +2,9 @@
 dependency1.from=DemoTest
 dependency1.to=Demo
 dependency1.type=UsesDependency
-editor.fx.0.height=1052
-editor.fx.0.width=1516
-editor.fx.0.x=100
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
 editor.fx.0.y=0
 objectbench.height=300
 objectbench.width=595
