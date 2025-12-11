@@ -1,0 +1,114 @@
+/* 
+ * CSS Version 3: Flexbox Layout
+ * Basiert auf css_v2.css und fügt Flexbox-Layouts hinzu
+ */
+
+@import url('./css_v2.css');
+
+/* ---- Sektions-Karten mit Flexbox ------------------ */
+
+.sections-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.section-card {
+    flex: 1;
+    min-width: 250px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin: 0;
+    order: -1;
+    /* Bild kommt an den Anfang */
+}
+
+.section-card h3 {
+    margin: 1rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.section-card p {
+    margin: 0 1rem 1.5rem 1rem;
+    color: #7f8c8d;
+    text-align: left;
+}
+
+
+/* --- Statistiken mit Flexbox ------------------- */
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 200px;
+    background: linear-gradient(135deg, #7a98b3, #5a6c7d);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+
+/* ---- Footer mit Flexbox ---------------------- */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.newsletter-section {
+    flex: 5;
+    /* min-width: 400px; */
+    flex-basis: 100%;
+}
+
+.footer-info {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    justify-content: space-between;
+    flex-basis: 100%;
+}
+
+.footer-about {
+    flex: 2;
+    min-width: 200px;
+}
+
+.footer-quick-links {
+    flex: 1;
+    min-width: 200px;
+}

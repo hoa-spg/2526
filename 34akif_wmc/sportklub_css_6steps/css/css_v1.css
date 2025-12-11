@@ -1,0 +1,340 @@
+/* 
+ * CSS Version 1: Grundlayout (vereinfacht)
+ * Nur die absoluten Grundlagen!
+ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background-color: whitesmoke;
+}
+
+/* --- header -----------------------------*/
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+}
+
+header span {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: #2c3e50;
+    color: white;
+}
+
+.css-controls {
+    float: right;
+}
+
+#nav-toggle,
+label[for="nav-toggle"],
+.theme-toggle {
+    display: none;
+}
+
+#nav-menu {
+    display: block;
+}
+
+#nav-menu ul {
+    list-style: none;
+}
+
+#nav-menu li {
+    display: inline-block;
+    margin: 1rem;
+    font-size: 1.3rem;
+}
+
+#nav-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+#nav-menu a:hover {
+    color: slategray;
+}
+
+select {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+}
+
+/* --- main layout -----------------------------*/
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #ecf0f1;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #e74c3c;
+    font-size: 2rem;
+    margin: 1rem 0 1rem 0;
+    padding: 0.5rem 0;
+    border-bottom: 3px solid #e74c3c;
+}
+
+h3,
+h4 {
+    color: #34495e;
+    font-size: 1.4rem;
+    margin: 1.5rem 0 0.5rem 0;
+}
+
+section {
+    background-color: #d6d4d4;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+ul,
+ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+a {
+    color: #34495e;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2c3e50;
+    text-decoration: underline;
+}
+
+aside {
+    background: #d6ac67;
+    color: white;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 10px;
+}
+
+aside h3,
+aside h4 {
+    color: white;
+    margin-top: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* ----------------------------- Tabellen-Styling ----------------------------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+caption {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+th {
+    background: #34495e;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: bold;
+}
+
+td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+
+/* --- footer ----------------------------- */
+
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 3rem 0;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+footer h2 {
+    color: white;
+    border-bottom: 3px solid #e74c3c;
+}
+
+footer h3,
+footer h4 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer li {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: #bdc3c7;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}
+
+
+/* ---- form styling -------------------------- */
+
+label {
+    display: block;
+    margin: 1rem 0 0.5rem 0;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: #34495e;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+.newsletter-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.newsletter-form label {
+    color: white;
+}
+
+.newsletter-form input {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    color: #2c3e50;
+}
+
+.newsletter-form input::placeholder {
+    color: #7f8c8d;
+}
+
+
+.checkbox-label {
+    display: block;
+    margin: 1rem 0;
+}
+
+input[type="text"],
+input[type="email"] {
+    font-size: 1rem;
+}
+
+.newsletter-form button {
+    background: #27ae60;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.newsletter-form button:hover {
+    background: #219a52;
+}
+
+
+.submit-btn {
+    background: #e74c3c;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.submit-btn:hover {
+    background: #c0392b;
+}
+
+.back-to-top {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.top-link {
+    background: #95a5a6;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.top-link:hover {
+    background: #7f8c8d;
+    color: white;
+}
