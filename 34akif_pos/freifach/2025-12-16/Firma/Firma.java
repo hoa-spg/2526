@@ -108,6 +108,25 @@ public class Firma {
         }
     }
     
+    public int getHoechstesGehalt() {
+        int maxGehalt = Integer.MIN_VALUE;
+        if (anzahlMitarbeiter() > 0) {
+    
+            if (this.ma1 != null && this.ma1.getGehalt() > maxGehalt) {
+                maxGehalt = this.ma1.getGehalt();
+            }
+            if (this.ma2 != null && this.ma2.getGehalt() > maxGehalt) {
+                maxGehalt = this.ma2.getGehalt();
+            }
+            if (this.ma3 != null && this.ma3.getGehalt() > maxGehalt) {
+                maxGehalt = this.ma3.getGehalt();
+            }
+        } else {
+            System.out.println("FEHLER: kein Mitarbeiter vorhanden.");
+        }
+        return maxGehalt;
+    }
+    
     public String toString() {
         String str = "Name: "+ name + "\n";
         str += "----------------------------------\n";

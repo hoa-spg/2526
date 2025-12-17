@@ -16,7 +16,7 @@ public class Sigma {
 
     public void zeichnen() {
         for (int i=0; i<groesse; i++) {
-            System.out.print("x");
+             System.out.print("x");
         }
         System.out.println();
         for (int i=1; i<groesse; i++) {
