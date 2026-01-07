@@ -1,7 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        Christbaum c = new Christbaum(50, 7);
+        Christbaum c = new Christbaum(19, 3);
         c.zeichnen(5);
 //
 //        c.setHoehe(12);
