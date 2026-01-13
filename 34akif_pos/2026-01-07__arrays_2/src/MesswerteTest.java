@@ -59,4 +59,22 @@ class MesswerteTest {
         assertEquals(3, messwerte.messwert(5));
         assertEquals(6, messwerte.getAnzahl());
     }
+
+    @org.junit.jupiter.api.Test
+    void summeMesswerte() {
+        assertEquals(18, messwerte.summeMesswerte());
+    }
+
+    @org.junit.jupiter.api.Test
+    void durchschnitt() {
+        assertEquals(3.6, messwerte.durchschnitt(), 0.0001);
+    }
+
+    @org.junit.jupiter.api.Test
+    void minimum() {
+        assertEquals(-5, messwerte.minimum());
+        assertEquals(-5, messwerte.minimum2());
+    }
+
+
 }

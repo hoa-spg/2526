@@ -56,6 +56,54 @@ public class Messwerte {
         }
     }
 
+    // summe aller messwerte
+    public int summeMesswerte() {
+        int summe = 0;
+        for (int i=0; i<anzahl; i++) {
+            summe += werte[i];
+        }
+        return summe;
+    }
+
+    public double durchschnitt() {
+        if (anzahl > 0) {
+            return (double)summeMesswerte()/anzahl;
+        } else {
+            System.out.println("Fehler: keine Werte vorhanden");
+            return -1.0;
+        }
+    }
+
+    public int minimum() {
+        if (anzahl > 0) {
+            int min = werte[0];
+            for (int i=1; i<anzahl; i++) {
+                if (werte[i] < min) {
+                    min = werte[i];
+                }
+            }
+            return min;
+        } else {
+            System.out.println("Fehler: keine Werte vorhanden.");
+            return -1;
+        }
+    }
+
+    public int minimum2() {
+        if (anzahl > 0) {
+            int min = Integer.MAX_VALUE;
+            for (int i=0; i<anzahl; i++) {
+                if (werte[i] < min) {
+                    min = werte[i];
+                }
+            }
+            return min;
+        } else {
+            System.out.println("Fehler: keine Werte vorhanden.");
+            return -1;
+        }
+    }
+
     public String toString() {
         String str = "Messwerte: ";
         for (int i=0; i<anzahl; i++) {
