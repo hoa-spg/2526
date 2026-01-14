@@ -11,9 +11,9 @@ public class Labor {
         anzahl = 0;
     }
 
-    public Labor(String name) {
+    public Labor(String name, int maxAnzahlComputer) {
         setName(name);
-        computer = new Computer[10];
+        computer = new Computer[maxAnzahlComputer];
         anzahl = 0;
     }
 
@@ -26,6 +26,15 @@ public class Labor {
             this.name = name;
         } else {
             System.out.println("Fehler: ungueltiger Name.");
+        }
+    }
+
+    public Computer getComputer(int platz) {
+        if (platz >= 0 && platz < anzahl) {
+            return computer[platz];
+        } else {
+            System.out.println("Fehler: ungueltiger Parameter platz " + platz);
+            return null;
         }
     }
 
@@ -42,20 +51,62 @@ public class Labor {
     }
 
     public void einfuegen(int platz, Computer comp) {
-        // TODO
+        if (comp != null) {
+            if (anzahl < computer.length) {
+                if (platz >= 0 && platz <= anzahl) {
+                    for (int i=anzahl; i>platz; i--) {
+                        computer[i] = computer[i-1];
+                    }
+                    computer[platz] = comp;
+                    anzahl++;
+                } else {
+                    System.out.println("Fehler: ungueltiger Index " + anzahl);
+                }
+            } else {
+                System.out.println("Fehler: kein Platz im Array vorhanden.");
+            }
+        } else {
+            System.out.println("Fehler: ungueltiger Parameter (null).");
+        }
     }
 
     public boolean vorhanden(Computer comp) {
-        // TODO
+
+        if (comp != null) {
+            for (int i=0; i<anzahl; i++) {
+                if (computer[i] == comp) {
+                    return true;
+                }
+            }
+        } else {
+            System.out.println("Fehler: Parameter computer ist null.");
+        }
         return false;
     }
 
     public Computer entfernen(String name) {
-        return null; // TODO
+        if (name != null) {
+            for (int i=0; i<anzahl; i++) {
+                if (computer[i].getName().equals(name)) {
+                    return entfernen(i);
+                }
+            }
+        } else {
+            System.out.println("Fehler: parameter name ist null.");
+        }
+        return null;
     }
 
     public Computer entfernen(int platz) {
-        return null; // TODO
+        Computer ret = null;
+        if (platz >= 0 && platz < anzahl) {
+            ret = computer[platz];
+            for (int i=platz; i<anzahl; i++) {
+                computer[i] = computer[i+1];
+            }
+            anzahl--;
+        }
+        return ret;
     }
 
     public boolean entfernen(Computer comp) {
