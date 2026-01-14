@@ -133,11 +133,30 @@ class LaborTest {
         assertEquals(c3, labor.getComputer(1));
     }
 
-    // TODO
+    // TODO weitere Testmethodne mit ungueltigen Werten für platz
 
     @org.junit.jupiter.api.Test
     void entfernenMitNamen() {
 
+        Computer c = labor.entfernen("Macbook");
+        assertEquals(2, labor.anzahlComputer());
+        assertEquals(c, c2); // Rückgabewert von entfernen muss c2 sein!
+        System.out.println(labor);
+        assertEquals(c3, labor.getComputer(1));
     }
 
+//    c1 = new Computer("Lenovo", 1500, true);
+//    c2 = new Computer("Macbook", 2000, true);
+//    c3 = new Computer("Dell", 1700, false);
+    @org.junit.jupiter.api.Test
+    void anzahlSSD() {
+        assertEquals(2, labor.anzahlSSD());
+
     }
+
+    @org.junit.jupiter.api.Test
+    void durchschnittlicherSpeicher() {
+        assertEquals(1733.33, labor.durchschnittlicherSpeicher(), 0.01);
+    }
+
+}

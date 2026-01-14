@@ -118,11 +118,28 @@ public class Labor {
     }
 
     public int anzahlSSD() {
-        return 0; // TODO
+        int anzahl = 0;
+        // Vorsicht, potentieller Namenskonflikt mit this.anzahl!
+        for (int i=0; i<this.anzahl; i++) {
+            if (computer[i].hasSsd()) {
+                anzahl++;
+            }
+        }
+        return anzahl;
     }
 
     public double durchschnittlicherSpeicher() {
-        return 0.0; // TODO
+        int summeSpeicher = 0;
+        for (int i=0; i<anzahl; i++) {
+            summeSpeicher += computer[i].getSpeicher();
+        }
+        double durchschnittlicherSpeicher = 0.0;
+        if (anzahlComputer() > 0) {
+            durchschnittlicherSpeicher = (double)summeSpeicher / anzahlComputer();
+        } else {
+            System.out.println("Fehler: keine Computer vorhanden");
+        }
+        return durchschnittlicherSpeicher;
     }
 
     public String toString() {
