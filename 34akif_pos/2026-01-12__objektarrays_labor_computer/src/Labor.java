@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Labor {
 
     private String name;
