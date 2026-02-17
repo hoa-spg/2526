@@ -4,8 +4,15 @@ class VektorTest {
 
     /**
      * Potentielle Erweiterungen dieser Testklasse
-     * -
+     * - toString
+     * - Dimensionalität, 1, 0, -1 --> Fehler
+     * - Addition/Mult mit Vektoren verschiedener Dimensionalität -> Fehler
+     * - Addition/Mult mit Parameter null -> Fehler
+     * - Addition/Mult mit anderer Dimensionalität
+     * - Method-Chaining
      */
+
+
 
     private Vektor v1;
     private Vektor v2;
@@ -57,4 +64,18 @@ class VektorTest {
         assertEquals(-1, s.get(2));
     }
 
+    @org.junit.jupiter.api.Test
+    void methodChaining() {
+        // v1 + v2 = (6, 5, -1)
+        Vektor v3 = new Vektor(3);
+        v3.set(0, 7);
+        v3.set(1, 9);
+        v3.set(2, 12);
+        // v1 + v2 + v3 = (13, 14, 11)
+        Vektor v4 = v1.add(v2).add(v3);
+        System.out.println(v4);
+        assertEquals(13, v4.get(0));
+        assertEquals(14, v4.get(1));
+        assertEquals(11, v4.get(2));
+    }
 }
