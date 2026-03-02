@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Übungsseite: Wiener Sportklub">
+    <title>Demoseite: Web- and Mobile Computing</title>
+    <link id="cssLink" rel="stylesheet" href="css/css_v1.css">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <span>Demoseite: Web- and Mobile Computing</span>
+        <form class="css-controls">
+            <select id="cssVersion" onchange="switchCSS()" aria-label="CSS Version auswählen">
+                <option value="0">Gar kein CSS</option>
+                <option value="1">CSS Version 1</option>
+                <option value="2">CSS Version 2</option>
+                <option value="3">CSS Version 3</option>
+                <option value="4">CSS Version 4</option>
+                <option value="5">CSS Version 5</option>
+                <option value="6">CSS Version 6</option>
+            </select>
+            <label class="theme-toggle">
+                <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+                <span class="theme-slider"></span>
+            </label>
+        </form>
+
+        <input type="checkbox" id="nav-toggle">
+        <label for="nav-toggle" aria-hidden="true">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <nav id="nav-menu">
+            <ul class="nav-items">
+                <li><a href="#htmlGrundlagen">HTML-Grundlagen</a></li>
+                <li><a href="#htmlElemente">HTML-Elemente</a></li>
+                <li><a href="#css">CSS-Lektionen</a></li>
+                <li><a href="#cssProperties">CSS-Properties</a></li>
+                <li><a href="#versionen">Versionen</a></li>
+                <li><a href="#lernprojekt">Lernprojekt</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+                <li><a href="#footer">Newsletter</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <main>
+        <h1>Demoseite: Webdesign Grundkurs</h1>
+        <section id="htmlGrundlagen">
+            <h2>HTML Grundlagen</h2>
+            <div class="content-with-image">
+                <div class="text-content">
+                    <p>HTML (HyperText Markup Language) entstand Anfang der 1990er Jahre am CERN. Tim Berners‑Lee
+                        definierte eine einfache, SGML-inspirierte Auszeichnungssprache, um Dokumente im neu
+                        entstehenden
+                        World Wide Web zu verlinken. Mit frühen Spezifikationen wie HTML&nbsp;2.0 (1995) und
+                        HTML&nbsp;4.01
+                        (1999) verbreitete sich das Web rasant und legte die Basis für offene, vernetzte Inhalte.</p>
+
+                    <p>Heute steht HTML5 für modernes, semantisches HTML. Elemente wie <code>header</code>,
+                        <code>nav</code>,
+                        <code>main</code>, <code>section</code>, <code>article</code>, <code>aside</code> und
+                        <code>footer</code>
+                        beschreiben die Bedeutung von Inhalten statt nur deren Aussehen. Dazu kommen integrierte Medien
+                        (<code>audio</code>, <code>video</code>), Grafik (<code>canvas</code>, <code>svg</code>),
+                        bessere
+                        Formulare und APIs. Semantik verbessert Zugänglichkeit, SEO und Wiederverwendbarkeit von
+                        Inhalten.
+                    </p>
+
+                    <p>Als Grundgerüst jeder Webanwendung strukturiert HTML die Inhalte, CSS gestaltet das
+                        Erscheinungsbild
+                        und JavaScript sorgt für Interaktivität. Ob statische Seiten, SPAs mit Frameworks oder
+                        serverseitig
+                        gerenderte Apps – alles baut auf sauberem HTML auf. Gute Struktur, progressive Enhancement und
+                        barrierefreie Markup-Praktiken machen Anwendungen robust und zukunftssicher.</p>
+                </div>
+                <img src="img/html5_logo.png" alt="HTML5 Logo" class="section-image">
+            </div>
+        </section>
+
+
+
+        <section id="htmlElemente">
+            <h2>HTML Elemente</h2>
+
+            <p>
+                Unterschied zwischen Tags und Elementen: Ein <em>Tag</em> ist das
+                Markierungskennzeichen in spitzen Klammern (z.&nbsp;B. <code>&lt;p&gt;</code>),
+                ein <em>Element</em> besteht aus Start‑Tag, optionalem Inhalt und End‑Tag
+                (z.&nbsp;B. <code>&lt;p&gt;Text&lt;/p&gt;</code>). Manche Elemente sind leer (void)
+                und haben keinen Inhalt sowie keinen End‑Tag, z.&nbsp;B. <code>&lt;img&gt;</code> oder
+                <code>&lt;br&gt;</code>.
+            </p>
+
+            <table>
+                <caption>Wichtige HTML‑Elemente und kurze Erklärung</caption>
+                <thead>
+                    <tr>
+                        <th>Element</th>
+                        <th>Erklärung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>html</code></td>
+                        <td>Wurzelelement eines HTML‑Dokuments.</td>
+                    </tr>
+                    <tr>
+                        <td><code>head</code></td>
+                        <td>Metadaten, Titel und Verweise auf Ressourcen.</td>
+                    </tr>
+                    <tr>
+                        <td><code>title</code></td>
+                        <td>Seitentitel in der Browser‑Registerkarte.</td>
+                    </tr>
+                    <tr>
+                        <td><code>meta</code></td>
+                        <td>Metainformationen (z.&nbsp;B. Charset, Viewport, Description).</td>
+                    </tr>
+                    <tr>
+                        <td><code>link</code></td>
+                        <td>Verknüpft externe Ressourcen wie CSS.</td>
+                    </tr>
+                    <tr>
+                        <td><code>script</code></td>
+                        <td>Bindet JavaScript ein.</td>
+                    </tr>
+                    <tr>
+                        <td><code>body</code></td>
+                        <td>Beinhaltet alle sichtbaren Inhalte der Seite.</td>
+                    </tr>
+                    <tr>
+                        <td><code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code></td>
+                        <td>Semantische Bereiche der Seitengestaltung.</td>
+                    </tr>
+                    <tr>
+                        <td><code>section</code>, <code>article</code>, <code>aside</code></td>
+                        <td>Semantische Inhaltsblöcke und Randinhalte.</td>
+                    </tr>
+                    <tr>
+                        <td><code>h1</code>–<code>h6</code></td>
+                        <td>Überschriften‑Hierarchie.</td>
+                    </tr>
+                    <tr>
+                        <td><code>p</code></td>
+                        <td>Absatztext.</td>
+                    </tr>
+                    <tr>
+                        <td><code>a</code></td>
+                        <td>Hyperlink zu anderen Seiten oder Bereichen.</td>
+                    </tr>
+                    <tr>
+                        <td><code>img</code></td>
+                        <td>Bild (void‑Element; kein End‑Tag, kein Inhalt).</td>
+                    </tr>
+                    <tr>
+                        <td><code>ul</code>, <code>ol</code>, <code>li</code></td>
+                        <td>Listen: ungeordnet, geordnet und Listeneintrag.</td>
+                    </tr>
+                    <tr>
+                        <td><code>table</code>, <code>thead</code>, <code>tbody</code>, <code>tr</code>,
+                            <code>th</code>, <code>td</code>
+                        </td>
+                        <td>Tabellen und ihre Struktur.</td>
+                    </tr>
+                    <tr>
+                        <td><code>form</code>, <code>label</code>, <code>input</code>, <code>button</code></td>
+                        <td>Formulareingaben und Interaktion.</td>
+                    </tr>
+                    <tr>
+                        <td><code>figure</code>, <code>figcaption</code></td>
+                        <td>Abbildung mit begleitender Beschriftung.</td>
+                    </tr>
+                    <tr>
+                        <td><code>div</code>, <code>span</code></td>
+                        <td>Generische Container (Block bzw. Inline).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                <strong>Attribute &amp; Regeln:</strong> Attribute ergänzen Elemente um Zusatzinformationen
+                (z.&nbsp;B. <code>href</code>, <code>src</code>, <code>alt</code>, <code>class</code>). Sie stehen im
+                Start‑Tag und folgen der Form <code>name="wert"</code>. Elemente werden korrekt verschachtelt und
+                geschlossen: die meisten haben ein Start‑Tag und ein End‑Tag; sogenannte <em>void elements</em>
+                (z.&nbsp;B. <code>img</code>, <code>br</code>, <code>meta</code>, <code>link</code>, <code>input</code>)
+                besitzen keinen End‑Tag und dürfen keinen Inhalt haben. Wohlgeformtes Markup (saubere Verschachtelung,
+                passende End‑Tags) verbessert Zugänglichkeit, Wartbarkeit und Browserkompatibilität.
+            </p>
+        </section>
+
+
+        <section id="css">
+            <h2>CSS</h2>
+            <p>
+                CSS (Cascading Style Sheets) beschreibt das Aussehen von HTML‑Inhalten: Farben, Schriften,
+                Abstände, Layouts und Animationen. Zusammen mit semantischem HTML und JavaScript ermöglicht
+                CSS responsive, zugängliche und performante Weboberflächen.
+            </p>
+
+            <div class="css-chapter-container">
+                <div class="css-chapter-card">
+                    <h3>Fonts & Farben</h3>
+                    <p>Typografie, Webfonts, Farbmodelle (HEX, RGB, HSL) und Kontrast für gute Lesbarkeit.</p>
+                    <img src="img/fonts_and_colors.jpg" alt="Fonts und Farben">
+                </div>
+
+                <div class="css-chapter-card">
+                    <h3>Boxmodell</h3>
+                    <p>Inhalt, Padding, Border, Margin und <em>box-sizing</em> bestimmen Größe und Abstände.</p>
+                    <img src="img/box_model.png" alt="Boxmodell">
+                </div>
+
+                <div class="css-chapter-card">
+                    <h3>Positioning</h3>
+                    <p>Static, relative, absolute, fixed, sticky und <em>z-index</em> für Ebenensteuerung.</p>
+                    <img src="img/positioning.jpeg" alt="Positionierung">
+                </div>
+
+                <div class="css-chapter-card">
+                    <h3>Selektoren</h3>
+                    <p>Typ‑, Klassen‑, ID‑, Attribut‑, Pseudoklassen/-elemente und Spezifität.</p>
+                    <img src="img/css_selectors.png" alt="CSS Selektoren">
+                </div>
+
+                <div class="css-chapter-card">
+                    <h3>Flexbox</h3>
+                    <p>Einfaches 1D‑Layout: Ausrichtung, Verteilung, Reihenfolge und flexible Größen.</p>
+                    <img src="img/flexbox.png" alt="Flexbox Layout">
+                </div>
+
+                <div class="css-chapter-card">
+                    <h3>Grid</h3>
+                    <p>Leistungsstarkes 2D‑Layout: Tracks, Areas und responsive Raster.</p>
+                    <img src="img/grid.png" alt="Grid Layout">
+                </div>
+
+                <div class="css-chapter-card">
+                    <h3>Transitions</h3>
+                    <p>Weiche Übergänge, Transformationen, Keyframe‑Animationen und Performance‑Tipps.</p>
+                    <img src="img/transitions.png" alt="CSS Transitions">
+                </div>
+
+                <div class="css-chapter-card">
+                    <h3>Frameworks</h3>
+                    <p>Übersicht: Bootstrap, Tailwind & Co. – Utility vs. Komponenten‑Ansatz.</p>
+                    <img src="img/frameworks.jpg" alt="CSS Frameworks">
+                </div>
+            </div>
+        </section>
+
+        <aside>
+            <div class="sidebar-content">
+                <h3>Visual Studio Code</h3>
+                <p>
+                    Visual Studio Code (VS&nbsp;Code) ist eine schnelle, kostenlose und plattformübergreifende
+                    Entwicklungsumgebung, und derzeit der Industriestandard für Webentwicklung.
+                </p>
+
+                <div class="devtools">
+                    <a href="https://code.visualstudio.com/" title="Visual Studio Code">
+                        <img src="img/vscode_logo.png" class="vscode-logo" alt="VS Code Logo"
+                            style="max-width:300px; height:auto; display:block; margin:0 auto 1rem;">
+                    </a>
+
+                    <div class="plugin-list">
+                        <div class="plugin">
+                            <p>
+                                <strong>W3C Validator:</strong> Validiert HTML direkt in VS&nbsp;Code nach
+                                W3C‑Standards, weist auf Fehler und Barrierefreiheitsprobleme hin.
+                            </p>
+                            <a href="https://marketplace.visualstudio.com/items?itemName=WebValidator.w3cvalidate"
+                                title="W3C Validator">
+                                <img src="img/w3c_validator_logo.png" alt="W3C Validator Logo"
+                                    style="width:80px; height:80px; object-fit:cover;">
+                            </a>
+                        </div>
+
+                        <div class="plugin">
+                            <p>
+                                <strong>Live Server:</strong> Startet einen lokalen Entwicklungsserver mit automatischem
+                                Reload. Änderungen an HTML/CSS/JS sind sofort im Browser sichtbar.
+                            </p>
+                            <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"
+                                title="Live Server">
+                                <img src="img/live_server_logo.png" alt="Live Server Logo"
+                                    style="width:80px; height:80px; object-fit:cover;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section id="cssProperties">
+            <h2>CSS Properties</h2>
+
+            <table>
+                <caption>Häufig verwendete CSS‑Eigenschaften (kurz erklärt)</caption>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Beschreibung</th>
+                        <th>Typische Werte</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>color</code></td>
+                        <td>Textfarbe</td>
+                        <td>#333, rgb(), hsl()</td>
+                    </tr>
+                    <tr>
+                        <td><code>background-color</code></td>
+                        <td>Hintergrundfarbe</td>
+                        <td>#fff, rgb(), hsl()</td>
+                    </tr>
+                    <tr>
+                        <td><code>font-family</code></td>
+                        <td>Schriftart</td>
+                        <td>"Inter", Arial, sans-serif</td>
+                    </tr>
+                    <tr>
+                        <td><code>font-size</code></td>
+                        <td>Schriftgröße</td>
+                        <td>16px, 1rem, 120%</td>
+                    </tr>
+                    <tr>
+                        <td><code>font-weight</code></td>
+                        <td>Schriftstärke</td>
+                        <td>400, 700, bold</td>
+                    </tr>
+                    <tr>
+                        <td><code>line-height</code></td>
+                        <td>Zeilenhöhe</td>
+                        <td>1.5, 24px</td>
+                    </tr>
+                    <tr>
+                        <td><code>text-align</code></td>
+                        <td>Textausrichtung</td>
+                        <td>left, center, right, justify</td>
+                    </tr>
+                    <tr>
+                        <td><code>margin</code></td>
+                        <td>Außenabstand</td>
+                        <td>16px, 1rem, auto</td>
+                    </tr>
+                    <tr>
+                        <td><code>padding</code></td>
+                        <td>Innenabstand</td>
+                        <td>8px, 1rem</td>
+                    </tr>
+                    <tr>
+                        <td><code>border</code></td>
+                        <td>Rahmen</td>
+                        <td>1px solid #ccc</td>
+                    </tr>
+                    <tr>
+                        <td><code>border-radius</code></td>
+                        <td>Eckenradius</td>
+                        <td>4px, 50%</td>
+                    </tr>
+                    <tr>
+                        <td><code>box-shadow</code></td>
+                        <td>Schatten</td>
+                        <td>0 2px 8px rgba()</td>
+                    </tr>
+                    <tr>
+                        <td><code>width</code></td>
+                        <td>Breite</td>
+                        <td>320px, 100%, 50vw</td>
+                    </tr>
+                    <tr>
+                        <td><code>max-width</code></td>
+                        <td>Max. Breite</td>
+                        <td>1200px, 60ch, 100%</td>
+                    </tr>
+                    <tr>
+                        <td><code>display</code></td>
+                        <td>Anzeigemodus</td>
+                        <td>block, inline, inline-block, flex, grid, none</td>
+                    </tr>
+                    <tr>
+                        <td><code>position</code></td>
+                        <td>Positionierung</td>
+                        <td>static, relative, absolute, fixed, sticky</td>
+                    </tr>
+                    <tr>
+                        <td><code>z-index</code></td>
+                        <td>Stapelreihenfolge</td>
+                        <td>0, 10, 100</td>
+                    </tr>
+                    <tr>
+                        <td><code>overflow</code></td>
+                        <td>Überlaufverhalten</td>
+                        <td>visible, hidden, scroll, auto</td>
+                    </tr>
+                    <tr>
+                        <td><code>justify-content</code></td>
+                        <td>Hauptachsen‑Ausrichtung (Flex)</td>
+                        <td>flex-start, center, space-between</td>
+                    </tr>
+                    <tr>
+                        <td><code>align-items</code></td>
+                        <td>Querachsen‑Ausrichtung (Flex)</td>
+                        <td>stretch, center, flex-start, flex-end</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="geschichte">
+            <h2>JavaScript</h2>
+            <p>
+                JavaScript ist die Programmiersprache des Webs und sorgt für Interaktivität, dynamische Inhalte und
+                Logik in der Benutzeroberfläche. Es steuert den DOM, reagiert auf Events (Klick, Eingabe, Scroll),
+                kommuniziert über Netzwerke (z.&nbsp;B. <code>fetch</code>) mit Servern und ermöglicht komplexe
+                Anwendungen im Browser. Neben dem Frontend wird JavaScript mit <strong>Node.js</strong> auch
+                serverseitig eingesetzt.
+            </p>
+            <p>
+                Die Sprache wird durch <strong>ECMA International</strong> als <em>ECMAScript</em> standardisiert. Seit
+                <strong>ES6/ES2015</strong> kamen zentrale Features hinzu: <code>let</code>/<code>const</code>,
+                Arrow‑Funktionen, Klassen, Module, Promises sowie <code>async/await</code>. Moderne Toolchains
+                (Bundler, Transpiler) und optional <strong>TypeScript</strong> verbessern Struktur, Wartbarkeit und
+                Entwicklererlebnis.
+            </p>
+        </section>
+
+        <section id="versionen">
+            <h2>Framework-Versionen</h2>
+            <p>Bei der Webentwicklung kommen verschiedene Frameworks und
+                Bibliotheken zum Einsatz, die sich ständig weiterentwickeln. CSS
+                Frameworks erleichtern die Gestaltung und das Layout von
+                Webseiten. SPA-Frameworks unterstützen die Entwicklung von Single Page Applications.
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>CSS-Frameworks</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">Bootstrap</span>
+                            <span class="stat-number">5.3.8</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Tailwind CSS</span>
+                            <span class="stat-number">4.0.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>SPA-Frameworks</h3>
+                    <div class="stats-grid">
+
+                        <div class="stat-item">
+                            <span class="stat-label">Angular</span>
+                            <span class="stat-number">21.0.5</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">React</span>
+                            <span class="stat-number">19.2.0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Vue</span>
+                            <span class="stat-number">3.5.18</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top:1rem">
+                Hinweis: Versionsnummern Stand Dezember 2025
+            </p>
+        </section>
+
+        <section id="lernprojekt">
+            <h2>Lern-Projekt</h2>
+            <p>
+                Im Zuge dieses Kurses werden Sie eine eigene Webseite erstellen. Es wird Abgaben zu den folgenden
+                Meilensteinen geben:
+            </p>
+            <ol>
+                <li><strong>Meilenstein 1:</strong> Inhalte zusammenstellen,
+                    Seite mit HTML5 ohne CSS erstellen, Bilder und Links
+                    einfügen.</li>
+                <li><strong>Meilenstein 2:</strong> CSS hinzufügen, Grundlegendes Design mit Farben, Schriftarten,
+                    Abständen. </li>
+                <li><strong>Meilenstein 3:</strong>
+                    <emph>Responsive Design</emph> mit Flexbox und Grid Layout.
+                </li>
+                <li><strong>(Optional) Meilenstein 4:</strong> Animationen, Burger-Menü, Darkmode</li>
+            </ol>
+
+            <h3>Über diese Seite</h3>
+            <p>
+                Diese Demoseite wurde im Rahmen des Kurses "Web- and Mobile
+                Computing", um grundlegende Konzepte von HTML, CSS und
+                JavaScript zu veranschaulichen. Die sechs verschiedenen
+                CSS-Versionen bauen aufeinander auf, und können über ein
+                Dropdown-Menü im Header ausgewählt werden. Die Ausbaustufen
+                sollen Ihnen bei der Umsetzung Ihres invidiuellen Lernprojektes
+                behilflich sein.
+            </p>
+            <ol>
+                <li><strong>CSS Step 1:</strong> Grundlayout und Basisstyles</li>
+                <li><strong>CSS Step 2:</strong> Gestaltung von Tabelle und Formular</li>
+                <li><strong>CSS Step 3:</strong> Responsive Design 1: Flexbox für responsive Layouts</li>
+                <li><strong>CSS Step 4:</strong> Responsive Design 2: Burger-Menü, Grid Layout</li>
+                <li><strong>CSS Step 5:</strong> Animationen und Übergänge</li>
+                <li><strong>CSS Step 6:</strong> Dark Mode und erweiterte Design-Elemente</li>
+            </ol>
+
+
+        </section>
+
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Adresse</h3>
+                    <address>
+                        HTL Spengergasse<br>
+                        Spengergasse 20<br>
+                        1050 Wien, Österreich
+                    </address>
+
+                    <div class="contact-details">
+                        <p><strong>Telefon:</strong> +43 1 54615 0</p>
+                        <p><strong>Email:</strong> <a
+                                href="mailto:direktion@spengergasse.at">direktion@spengergasse.at</a></p>
+                        <p><strong>Website:</strong> <a href="http://www.spengergasse.at">www.spengergasse.at</a></p>
+                    </div>
+
+                    <div class="opening-hours">
+                        <h4>Öffnungszeiten</h4>
+                        <ul>
+                            <li>Mo-Fr: 18:00 - 22:00</li>
+                            <li>Sa: 08:00 - 18:00</li>
+                            <li>Sonn- und Feiertage: geschlossen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="map-placeholder">
+                    <div class="map-box">
+                        <iframe
+                            src="https://maps.google.com/maps?q=HTL%20Spengergasse%2C%20Spengergasse%2020%2C%201050%20Wien&hl=de&z=15&output=embed"
+                            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" title="Karte: HTL Spengergasse">
+                        </iframe>
+                        <p class="map-caption">📍 HTL Spengergasse</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="back-to-top">
+        <a href="#nav-menu" class="top-link">⬆ Nach oben</a>
+    </div>
+
+    <footer>
+        <div class="newsletter-section">
+            <h2>Newsletter Anmeldung</h2>
+            <p>Bleiben Sie über Aktuelles zum Kurs informiert!</p>
+            <form class="newsletter-form">
+                <label for="newslname">
+                    Name: <input type="text" id="newslname" name="name" placeholder="Ihr Name">
+                </label>
+
+                <label for="email">
+                    Email: <input type="email" id="email" name="email" placeholder="ihre.email@example.com">
+                </label>
+
+                <label class="checkbox-label">
+                    <input type="checkbox" id="check" name="check">
+                    <span class="checkmark"></span>
+                    Ich bin kein Roboter
+                </label>
+
+                <button type="submit" class="submit-btn">📧 Jetzt anmelden!</button>
+            </form>
+        </div>
+
+        <div class="footer-info">
+            <div class="footer-about">
+                <h3>Demo: Web- and Mobile Computing</h3>
+                <p>Ausbildung mit Zukunft</p>
+                <p>© 2025 HTL Spengergasse</p>
+            </div>
+
+            <div class="footer-quick-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#htmlGrundlagen">HTML-Grundlagen</a></li>
+                    <li><a href="#htmlElemente">HTML-Elemente</a></li>
+                    <li><a href="#css">CSS-Lektionen</a></li>
+                    <li><a href="#cssProperties">CSS-Properties</a></li>
+                    <li><a href="#versionen">Versionen</a></li>
+                    <li><a href="#lernprojekt">Lernprojekt</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
