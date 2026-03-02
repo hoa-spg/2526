@@ -12,7 +12,6 @@ export class Sortieren {
             throw new Error("n muss eine positive Zahl sein.");
         }
 
-        // Hier wird 
         this.werte = []; // Erzeugen eines neuen Arrays
 
         // Array mit Zufallszahlen zwischen 0 und 100 initialisieren

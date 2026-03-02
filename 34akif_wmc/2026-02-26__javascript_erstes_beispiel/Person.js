@@ -34,4 +34,8 @@ export class Person {
     vorstellen() {
         return `Ich heiße ${this.name}, bin ${this.getAlter()} Jahre alt und mein Geschlecht ist ${this.geschlecht}.`;
     }
+
+    toString() {
+        return "X";
+    }
 }
