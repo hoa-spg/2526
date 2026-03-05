@@ -73,6 +73,7 @@ public class Mitarbeiter  {
         String str = "Name: " + getName() + " (" + getGeburtsjahr() + ")";
         str += ", Stundenlohn: " + getStundenlohn() + " Euro";
         str += ", Anzahl Wochenstunden: " + getAnzahlWochenStunden();
+        str += ", Typ: " + this.getClass().getName();
         return str;
     }
 

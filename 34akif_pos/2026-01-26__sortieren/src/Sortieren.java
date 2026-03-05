@@ -41,9 +41,9 @@ public class Sortieren {
     }
 
     public static void selectionSort(int[] a) {
-        for (int i=0; i<a.length-1; i++) {
+        for (int i=0; i<a.length-1; i++) { // O(n)
             int jMin = i;
-            for (int j=i+1; j<a.length; j++) {
+            for (int j=i+1; j<a.length; j++) { // O(n)
                 if (a[j] < a[jMin]) {
                     jMin = j;
                 }

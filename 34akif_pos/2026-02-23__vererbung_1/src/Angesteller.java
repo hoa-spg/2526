@@ -45,7 +45,6 @@ public class Angesteller extends Mitarbeiter {
 //        str += " Stundenlohn: " + getStundenlohn() + ", " + getAnzahlWochenStunden() + " h/W";
         String str = super.toString();
         str += hasUeberstundenPauschale() ? " (Ueberstundenpauschale)" : " (keine Uestd.-Pauschale)";
-        str += ", Typ: " + this.getClass().getName();
         return str;
     }
 

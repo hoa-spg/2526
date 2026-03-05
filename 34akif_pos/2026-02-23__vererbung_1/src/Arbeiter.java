@@ -36,7 +36,6 @@ public class Arbeiter extends Mitarbeiter {
 //        str += " Stundenlohn: " + getStundenlohn() + ", " + getAnzahlWochenStunden() + " h/W";
         String str = super.toString();
         str += isFacharbeiter() ? " (Facharbeiter)" : " (Hilfsarbeiter)";
-        str += ", Typ: " + this.getClass().getName();
         return str;
     }
 
