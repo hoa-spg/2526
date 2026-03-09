@@ -69,7 +69,9 @@ public class Fahrzeug {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Fahrzeug fahrzeug = (Fahrzeug) o;
-        return neupreis == fahrzeug.neupreis && Objects.equals(bezeichnung, fahrzeug.bezeichnung) && Objects.equals(erstZulassung, fahrzeug.erstZulassung);
+        return neupreis == fahrzeug.neupreis
+                && Objects.equals(bezeichnung, fahrzeug.bezeichnung)
+                && Objects.equals(erstZulassung, fahrzeug.erstZulassung);
     }
 
     @Override

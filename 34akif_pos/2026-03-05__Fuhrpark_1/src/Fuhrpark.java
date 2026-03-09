@@ -1,15 +1,18 @@
 import java.util.ArrayList;
 
 public class Fuhrpark {
+
     private String name;
     private ArrayList<Fahrzeug> fahrzeuge;
 
     public Fuhrpark() {
         setName("n/a");
+        fahrzeuge = new ArrayList<>();
     }
 
     public Fuhrpark(String name) {
         setName(name);
+        fahrzeuge = new ArrayList<>();
     }
 
     public String getName() {
@@ -24,6 +27,14 @@ public class Fuhrpark {
         }
     }
 
+    public int anzahl() {
+        return fahrzeuge.size();
+    }
+
+    public boolean contains(Fahrzeug fahrzeug) {
+        return fahrzeuge.contains(fahrzeug);
+    }
+
     public void aufnehmen(Fahrzeug fahrzeug) {
         if (fahrzeug != null) {
             if (!fahrzeuge.contains(fahrzeug)) {
@@ -35,6 +46,16 @@ public class Fuhrpark {
             System.out.println("Fehler: ungueltiges Fahrzeug (null)");
         }
     }
+
+    public boolean entfernen(Fahrzeug fahrzeug) {
+        if (fahrzeug != null) {
+            return fahrzeuge.remove(fahrzeug);
+        } else {
+            System.out.println("Fehler: parameter fahrzeug ist null.");
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         String str = name + "\n-----------------------\n";
