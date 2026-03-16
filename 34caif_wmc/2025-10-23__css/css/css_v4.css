@@ -1,0 +1,570 @@
+/* 
+ * CSS Version 4: Responsive Design & Sticky Navigation
+ * Basiert auf css_v3.css und fügt Media Queries sowie Sticky Navigation hinzu
+ */
+
+@import url('./css_v3.css');
+
+/* Sticky Navigation */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Navigation Toggle - hamburger bars korrigiert */
+#nav-toggle {
+    display: none;
+}
+
+label[for="nav-toggle"] {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+}
+
+/* Hamburger Menu Bars */
+label[for="nav-toggle"] .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+    display: block;
+}
+
+#nav-menu {
+    display: block;
+}
+
+/* Improved scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Breakpoints */
+
+/* Tablet Portrait (800px und kleiner) - Grid Layout komplett zurücksetzen */
+@media screen and (max-width: 800px) {
+
+    /* Grid Layout für Mobile komplett deaktivieren */
+    body {
+        display: block !important;
+        grid-template-areas: none !important;
+        grid-template-columns: none !important;
+        grid-template-rows: none !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: none !important;
+    }
+
+    /* Header responsive */
+    header {
+        position: relative;
+        grid-area: none !important;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .brand {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .controls {
+        text-align: center;
+    }
+
+    /* Navigation responsive */
+    label[for="nav-toggle"] {
+        display: flex !important;
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+    }
+
+    #nav-menu {
+        display: none;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem 0;
+        z-index: 1000;
+    }
+
+    #nav-toggle:checked~#nav-menu {
+        display: block !important;
+    }
+
+    .nav-items {
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+    }
+
+    .nav-items li {
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-items a {
+        display: block;
+        padding: 1rem;
+        border-radius: 0;
+    }
+
+    /* Main content responsive - Grid Layout komplett überschreiben */
+    main {
+        display: block !important;
+        grid-area: none !important;
+        padding: 1rem;
+        margin: 0;
+        max-width: none !important;
+        min-width: auto !important;
+    }
+
+    /* Alle Inhalte volle Breite */
+    main>h1,
+    main>section {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    /* Aside nach Sektionen positionieren - Grid überschreiben */
+    aside {
+        display: block !important;
+        grid-area: none !important;
+        position: static !important;
+        margin: 2rem 1rem 1rem 1rem;
+        padding-top: 0 !important;
+        height: auto !important;
+        top: auto !important;
+    }
+
+    /* Sektionen-Section spezifisch */
+    section#sektionen {
+        margin-bottom: 0;
+    }
+
+    /* Aside direkt nach Sektionen */
+    section#sektionen+aside {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Footer auch Grid zurücksetzen */
+    footer {
+        grid-area: none !important;
+        margin-top: 2rem;
+    }
+
+    .sidebar-content {
+        position: static;
+        order: -1;
+    }
+
+    /* Typography responsive */
+    h1 {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Section spacing */
+    section {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    /* Stats grid responsive */
+    .stats-grid {
+        gap: 1rem;
+    }
+
+    .stat-card {
+        min-width: 150px;
+        padding: 1rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    /* Timeline responsive */
+    .timeline-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .timeline-year {
+        align-self: center;
+        margin-bottom: 1rem;
+    }
+
+    /* Team cards responsive */
+    .team-grid {
+        gap: 1rem;
+    }
+
+    .team-card {
+        min-width: 100%;
+    }
+
+    /* Form responsive */
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .newsletter-form {
+        padding: 1.5rem;
+    }
+
+    /* Footer responsive */
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer-section {
+        min-width: auto;
+    }
+
+    /* Button group responsive */
+    .button-group {
+        flex-direction: column;
+    }
+
+    /* Icon list responsive */
+    .icon-list {
+        justify-content: center;
+    }
+
+    /* Table responsive */
+    .table-container {
+        margin: 1rem -1rem;
+        border-radius: 0;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: 0.5rem;
+    }
+}
+
+/* Mobile Landscape (480px und kleiner) */
+@media screen and (max-width: 480px) {
+
+    .header-inner {
+        padding: 0 1rem;
+    }
+
+    .brand {
+        font-size: 1.3rem;
+    }
+
+    label[for="nav-toggle"] {
+        right: 1rem;
+    }
+
+    main {
+        padding: 0 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        padding: 0.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    section {
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    .stats-grid {
+        gap: 0.5rem;
+    }
+
+    .stat-card {
+        min-width: 120px;
+        padding: 0.8rem;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+    }
+
+    .team-card-content {
+        padding: 1rem;
+    }
+
+    .newsletter-form {
+        padding: 1rem;
+    }
+
+    .footer-content {
+        padding: 0 1rem;
+    }
+
+    /* Smaller text inputs for mobile */
+    input[type="text"],
+    input[type="email"] {
+        font-size: 16px;
+        /* Prevents zoom on iOS */
+    }
+
+    /* Touch-friendly buttons */
+    button {
+        min-height: 44px;
+        font-size: 1rem;
+    }
+
+    .nav-items a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Large Desktop (1200px und größer) */
+@media screen and (min-width: 1200px) {
+
+    .container-flex {
+        gap: 3rem;
+    }
+
+    .header-inner {
+        max-width: 1400px;
+    }
+
+    main {
+        max-width: 1400px;
+    }
+
+    .footer-content {
+        max-width: 1400px;
+    }
+
+    /* Larger typography for big screens */
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    /* More columns for stats on large screens */
+    .stat-card {
+        min-width: 180px;
+    }
+
+    /* Better spacing */
+    section {
+        padding: 2.5rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+
+    header {
+        position: static;
+        background: white !important;
+        color: black !important;
+        box-shadow: none;
+        border-bottom: 2px solid #2c3e50;
+    }
+
+    .controls,
+    #nav-menu,
+    label[for="nav-toggle"] {
+        display: none !important;
+    }
+
+    .brand {
+        color: #2c3e50 !important;
+    }
+
+    main {
+        margin: 0;
+        padding: 0;
+        max-width: none;
+    }
+
+    .container-flex {
+        flex-direction: column;
+    }
+
+    section {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+    .stat-card {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #ddd;
+    }
+
+    .team-card {
+        break-inside: avoid;
+    }
+
+    footer {
+        background: white !important;
+        color: black !important;
+        border-top: 2px solid #2c3e50;
+    }
+
+    .newsletter-form {
+        display: none;
+    }
+
+    a {
+        color: black !important;
+        text-decoration: underline;
+    }
+
+    /* Show URLs after links */
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .team-card:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    header {
+        background: black !important;
+        color: white !important;
+    }
+
+    section {
+        border: 2px solid black;
+        background: white;
+    }
+
+    .stat-card {
+        background: black !important;
+        color: white !important;
+        border: 2px solid black;
+    }
+
+    button {
+        background: black !important;
+        color: white !important;
+        border: 2px solid black;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        border: 2px solid black;
+        background: white;
+        color: black;
+    }
+}
+
+/* Desktop-Layout mit CSS Grid - nur für Desktop */
+@media (min-width: 801px) {
+
+    /* Container um main herum für Grid Layout */
+    main {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        align-items: start;
+    }
+
+    /* H1 über beide Spalten */
+    main>h1 {
+        grid-column: 1 / -1;
+        /* Beide Spalten */
+        margin-bottom: 2rem;
+    }
+
+    /* Alle Sections standardmäßig über beide Spalten */
+    main>section {
+        grid-column: 1 / -1;
+        /* Volle Breite */
+    }
+
+    /* Nur die sektionen section nutzt Grid für aside */
+    section#sektionen {
+        grid-column: 1;
+        /* Nur erste Spalte */
+    }
+
+    /* Aside fix neben sektionen section - etwas nach unten verschoben */
+    main>aside {
+        grid-column: 2;
+        grid-row-start: 4;
+        /* Auf gleicher Höhe wie sektionen */
+        position: static;
+        /* Nicht sticky */
+        margin-top: 3rem;
+        /* Etwas nach unten schieben */
+        align-self: start;
+    }
+}

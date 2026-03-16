@@ -1,3 +1,6 @@
+/**
+ * asdfasdf
+ */
 public class Wurf {
 
     private Wuerfel w1;

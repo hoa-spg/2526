@@ -11,42 +11,42 @@
 
 <body>
     <header>
-        <span>Wiener Sportclub</span>
-        <form class="css-controls">
-            <select id="cssVersion" onchange="switchCSS()" aria-label="CSS Version auswählen">
-                <option value="0">Gar kein CSS</option>
-                <option value="1">CSS Version 1</option>
-                <option value="2">CSS Version 2</option>
-                <option value="3">CSS Version 3</option>
-                <option value="4">CSS Version 4</option>
-                <option value="5">CSS Version 5</option>
-                <option value="6">CSS Version 6</option>
-            </select>
-            <label class="theme-toggle">
-                <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
-                <span class="theme-slider"></span>
+        <div class="header-inner">
+            <span class="brand">Wiener Sportclub</span>
+            <div class="controls">
+                <select id="cssVersion" onchange="switchCSS()" aria-label="CSS Version auswählen">
+                    <option value="0">Gar kein CSS</option>
+                    <option value="1">CSS Version 1</option>
+                    <option value="2">CSS Version 2</option>
+                    <option value="3">CSS Version 3</option>
+                    <option value="4">CSS Version 4</option>
+                    <option value="5">CSS Version 5</option>
+                    <option value="6">CSS Version 6</option>
+                </select>
+                <label class="theme-toggle">
+                    <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+                    <span class="theme-slider"></span>
+                </label>
+            </div>
+            <!-- checkbox toggle for CSS-only burger menu -->
+            <input type="checkbox" id="nav-toggle">
+            <label for="nav-toggle" aria-hidden="true">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </label>
-        </form>
-
-        <input type="checkbox" id="nav-toggle">
-        <label for="nav-toggle" aria-hidden="true">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </label>
-
-        <nav id="nav-menu">
-            <ul class="nav-items">
-                <li><a href="#verein">Verein</a></li>
-                <li><a href="#geschichte">Geschichte</a></li>
-                <li><a href="#sektionen">Sektionen</a></li>
-                <li><a href="#spieler">Spieler</a></li>
-                <li><a href="#statistiken">Statistiken</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-                <li><a href="#footer">Newsletter</a></li>
-            </ul>
-        </nav>
-
+            <nav id="nav-menu">
+                <ul class="nav-items">
+                    <li><a href="#verein">Verein</a></li>
+                    <li><a href="#geschichte">Geschichte</a></li>
+                    <li><a href="#sektionen">Sektionen</a></li>
+                    <li><a href="#spieler">Spieler</a></li>
+                    <li><a href="#statistiken">Statistiken</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="#footer">Newsletter</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <h1>Übungsseite: Wiener Sportclub</h1>
@@ -144,8 +144,8 @@
                     <p>Diese dynamische Racket-Sportart kombiniert Schnelligkeit, Ausdauer und taktisches Geschick.
                         Unsere modernen Courts und erfahrenen Trainer bieten optimale Bedingungen für Anfänger und
                         Fortgeschrittene.</p>
-                    <img src="https://plus.unsplash.com/premium_photo-1707841330860-e98de313301a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=150"
-                        alt="Squash">
+                    <img
+                        src="https://plus.unsplash.com/premium_photo-1707841330860-e98de313301a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=150">
                 </div>
             </div>
 
@@ -417,45 +417,47 @@
         <a href="#nav-menu" class="top-link">⬆ Nach oben</a>
     </div>
 
-    <footer>
-        <div class="newsletter-section">
-            <h2>Newsletter Anmeldung</h2>
-            <p>Bleiben Sie über Vereinsnews und Veranstaltungen informiert!</p>
-            <form class="newsletter-form">
-                <label for="newslname">
-                    Name: <input type="text" id="newslname" name="name" placeholder="Ihr Name">
-                </label>
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="newsletter-section">
+                <h2>Newsletter Anmeldung</h2>
+                <p>Bleiben Sie über Vereinsnews und Veranstaltungen informiert!</p>
+                <form class="newsletter-form">
+                    <label for="newslname">
+                        Name: <input type="text" id="newslname" name="name" placeholder="Ihr Name">
+                    </label>
 
-                <label for="email">
-                    Email: <input type="email" id="email" name="email" placeholder="ihre.email@example.com">
-                </label>
+                    <label for="email">
+                        Email: <input type="email" id="email" name="email" placeholder="ihre.email@example.com">
+                    </label>
 
-                <label class="checkbox-label">
-                    <input type="checkbox" id="check" name="check">
-                    <span class="checkmark"></span>
-                    Ich bin kein Roboter
-                </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="check" name="check">
+                        <span class="checkmark"></span>
+                        Ich bin kein Roboter
+                    </label>
 
-                <button type="submit" class="submit-btn">📧 Jetzt anmelden!</button>
-            </form>
-        </div>
-
-        <div class="footer-info">
-            <div class="footer-about">
-                <h3>Wiener Sport-Club</h3>
-                <p>Tradition seit 1883</p>
-                <p>© 2024 Wiener Sport-Club</p>
+                    <button type="submit" class="submit-btn">📧 Jetzt anmelden!</button>
+                </form>
             </div>
 
-            <div class="footer-quick-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#verein">Über uns</a></li>
-                    <li><a href="#sektionen">Sektionen</a></li>
-                    <li><a href="#kontakt">Kontakt</a></li>
-                    <li><a href="#">Impressum</a></li>
-                    <li><a href="#">Datenschutz</a></li>
-                </ul>
+            <div class="footer-info">
+                <div class="footer-section">
+                    <h3>Wiener Sport-Club</h3>
+                    <p>Tradition seit 1883</p>
+                    <p>© 2024 Wiener Sport-Club</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#verein">Über uns</a></li>
+                        <li><a href="#sektionen">Sektionen</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
@@ -519,7 +521,6 @@
         });
 
         // Initialize CSS Version on Page Load
-
         document.addEventListener('DOMContentLoaded', function () {
             const savedVersion = localStorage.getItem('cssVersion') || '1';
             const versionSelect = document.getElementById('cssVersion');
@@ -540,7 +541,6 @@
                 localStorage.setItem('cssVersion', this.value);
             });
         });
-
     </script>
 
 </body>

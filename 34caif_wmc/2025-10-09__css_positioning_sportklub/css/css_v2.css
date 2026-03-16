@@ -1,0 +1,55 @@
+/* 
+ * CSS Version 2: Tabellen-Styling & visuelle Verbesserungen
+ * Basiert auf css_v1.css und fügt visuelle Aufwertungen hinzu
+ */
+
+@import url('./css_v1.css');
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+h1 {
+    background: linear-gradient(45deg, #6a7988, #bdc3c7);
+}
+
+header,
+brand,
+section,
+aside,
+table,
+form,
+h1 {
+    box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.7s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+tr:nth-child(even) {
+    background: #d5dbdb;
+}
+
+tr:nth-child(odd) {
+    background: #ffffff;
+}
+
+tr:hover {
+    background: #aab7b8 !important;
+    transform: scale(1.1);
+    transition: transform 0.6s ease;
+}
+
+td {
+    border-bottom: 1px solid #d5dbdb;
+    transition: background-color 0.5s ease;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
