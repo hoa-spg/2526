@@ -74,7 +74,6 @@ public abstract class Mitarbeiter  {
 
     public abstract int getKostenProMonat();
 
-
     public String toString() {
         String str = "Name: " + getName() + " (" + getGeburtsjahr() + ")";
         str += ", Stundenlohn: " + getStundenlohn() + " Euro";
