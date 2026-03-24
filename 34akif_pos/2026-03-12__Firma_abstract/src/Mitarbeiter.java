@@ -1,9 +1,9 @@
 public abstract class Mitarbeiter  {
 
-    protected String name;
-    protected int geburtsjahr;
-    protected int stundenlohn;
-    protected int anzahlWochenStunden;
+    private String name;
+    private int geburtsjahr;
+    private int stundenlohn;
+    private int anzahlWochenStunden;
 
     public Mitarbeiter() throws FirmaException {
         setName("n/a");
