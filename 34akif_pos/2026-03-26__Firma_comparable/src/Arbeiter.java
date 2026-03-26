@@ -21,14 +21,14 @@ public class Arbeiter extends Mitarbeiter {
         this.facharbeiter = facharbeiter;
     }
 
-    // @Override
-    // public int getKostenProMonat() {
-    //     int kosten = 4 * getStundenlohn() * getAnzahlWochenStunden();
-    //     if (isFacharbeiter()) {
-    //         kosten += 200; // Facharbeiterzuschlag
-    //     }
-    //     return kosten;
-    // }
+    @Override
+    public int getKostenProMonat() {
+        int kosten = 4 * getStundenlohn() * getAnzahlWochenStunden();
+        if (isFacharbeiter()) {
+            kosten += 200; // Facharbeiterzuschlag
+        }
+        return kosten;
+    }
 
     @Override
     public String toString() {

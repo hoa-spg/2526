@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public abstract class Immobilie {
 
     private String adresse;
@@ -43,6 +45,18 @@ public abstract class Immobilie {
 
     public int maklerProvision() {
         return (int)Math.ceil(0.01 * wert);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Immobilie immobilie = (Immobilie) o;
+        return wert == immobilie.wert && Objects.equals(adresse, immobilie.adresse);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(adresse, wert);
     }
 
     @Override
