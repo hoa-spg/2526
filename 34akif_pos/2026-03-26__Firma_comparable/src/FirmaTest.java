@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -106,7 +107,7 @@ public class FirmaTest {
             firma.einstellen(new Angesteller("Anna", 1980, 25, 40, true));
             firma.einstellen(new Angesteller("Clara", 1990, 28, 38, true));
             firma.einstellen(new Angesteller("Ben", 1975, 30, 35, false));
-            ArrayList<Mitarbeiter> sortiert = firma.sortierteListe();
+            List<Mitarbeiter> sortiert = firma.sortierteListe();
             for (Mitarbeiter m : sortiert) {
                 System.out.println(m);
             }
