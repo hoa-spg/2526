@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public abstract class Mitarbeiter implements Printable, Comparable<Mitarbeiter> {
 
     private String name;
@@ -73,9 +75,25 @@ public abstract class Mitarbeiter implements Printable, Comparable<Mitarbeiter> 
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (o == null || this.getClass() != o.getClass()) return false;
+        Mitarbeiter that = (Mitarbeiter) o;
+        return geburtsjahr == that.getGeburtsjahr() && Objects.equals(name, that.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, geburtsjahr);
+    }
+
+    @Override
     public int compareTo(Mitarbeiter other) {
         if (other != null) {
-            return this.name.compareTo(other.getName());
+            if (!this.name.equals(other.getName())) {
+                return this.name.compareTo(other.getName());
+            } else { // names are equal
+                return this.getGeburtsjahr() - other.getGeburtsjahr();
+            }
         } else {
             // unchecked Exception (gemäß Definition in Comparable interface)
             throw new NullPointerException("Ungueltiger Parameter: Mitarbeiter ist null.");

@@ -30,6 +30,7 @@ public class Firma implements Printable {
         personal = new ArrayList<>();
     }
 
+
     /**
      * Konstruktor mit Namen.
      *
@@ -73,6 +74,14 @@ public class Firma implements Printable {
         return personal.size();
     }
 
+    public boolean istVorhanden(Mitarbeiter m) throws FirmaException {
+        if (m != null) {
+            return this.personal.contains(m);
+        } else {
+            throw new FirmaException("Parameter Mitarbeiter ist null.");
+        }
+
+    }
     /**
      * Fügt einen neuen Mitarbeiter zur Firma hinzu.
      *

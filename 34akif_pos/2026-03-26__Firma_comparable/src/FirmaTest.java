@@ -101,6 +101,8 @@ public class FirmaTest {
         try {
             Firma firma = new Firma("DemoFirma");
             firma.einstellen(new Arbeiter("David", 1985, 20, 40, true));
+            firma.einstellen(new Arbeiter("David", 1981, 25, 40, true));
+
             firma.einstellen(new Arbeiter("Frank", 1978, 18, 42, true));
             firma.einstellen(new Arbeiter("Eva", 1992, 22, 36, false));
 
@@ -115,6 +117,26 @@ public class FirmaTest {
         } catch (FirmaException e) {
             System.out.println("FEHLER: " + e.getMessage());
         }
+    }
+
+    @Test
+    public void testVorhanden() {
+        try {
+            Firma firma = new Firma("DemoFirma");
+            firma.einstellen(new Arbeiter("David", 1985, 20, 40, true));
+            firma.einstellen(new Praktikant("Fritz", 1981, 25, 40));
+            boolean vorhanden = firma.istVorhanden(new Arbeiter("David", 1985, 20, 40, true));
+            System.out.println("David vorhanden: " + vorhanden);
+            assertTrue(vorhanden);
+
+            vorhanden = firma.istVorhanden(new Praktikant("Fritz", 1981, 25, 40));
+
+            assertTrue(vorhanden);
+
+         } catch (FirmaException e) {
+             System.out.println("FEHLER: " + e.getMessage());
+         }
+
     }
 }
 
