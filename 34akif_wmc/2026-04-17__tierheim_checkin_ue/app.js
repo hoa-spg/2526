@@ -7,7 +7,7 @@ const tierArten = [
 const nameInput = document.getElementById("name-input");
 const addButton = document.getElementById("add-btn");
 const removeButton = document.getElementById("remove-btn");
-const status = document.getElementById("status");
+const statusMessage = document.getElementById("status");
 const tierList = document.getElementById("tier-list");
 
 let index = 0;
@@ -16,7 +16,7 @@ addButton.addEventListener("click", function () {
     const name = nameInput.value.trim();
 
     if (name === "") {
-        status.textContent = "Bitte zuerst einen Tiernamen eingeben.";
+        statusMessage.textContent = "Bitte zuerst einen Tiernamen eingeben.";
         return;
     }
 
@@ -27,7 +27,7 @@ addButton.addEventListener("click", function () {
     li.style.borderColor = artInfo.farbe;
     tierList.append(li);
 
-    status.textContent = "Tiere im Tierheim: " + tierList.children.length;
+    statusMessage.textContent = "Tiere im Tierheim: " + tierList.children.length;
     nameInput.value = "";
 
     index = index + 1;
@@ -38,10 +38,10 @@ addButton.addEventListener("click", function () {
 
 removeButton.addEventListener("click", function () {
     if (tierList.children.length === 0) {
-        status.textContent = "Es gibt kein Tier zum Vermitteln.";
+        statusMessage.textContent = "Es gibt kein Tier zum Vermitteln.";
         return;
     }
 
     tierList.firstElementChild.remove();
-    status.textContent = "Tiere im Tierheim: " + tierList.children.length;
+    statusMessage.textContent = "Tiere im Tierheim: " + tierList.children.length;
 });
