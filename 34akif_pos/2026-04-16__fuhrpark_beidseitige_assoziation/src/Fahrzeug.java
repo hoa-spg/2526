@@ -1,6 +1,7 @@
 import java.util.Objects;
 
-public abstract  class Fahrzeug {
+public abstract class Fahrzeug {
+
     private String bezeichnung;
     private int ps;
     private int gewicht;
@@ -60,8 +61,12 @@ public abstract  class Fahrzeug {
         return fuhrpark;
     }
 
-    public void setFuhrpark(Fuhrpark fuhrpark) {
-        this.fuhrpark = fuhrpark;
+    public void setFuhrpark(Fuhrpark fuhrpark) throws FuhrparkException {
+        if (fuhrpark == null || (fuhrpark != null && fuhrpark.istVorhanden(this))) {
+            this.fuhrpark = fuhrpark;
+        } else {
+            throw new FuhrparkException("Fehler: Fahrzeug ist nicht in diesem Fuhrpark vorhanden.");
+        }
     }
 
     public double berechneVerbrauch() {
@@ -82,6 +87,7 @@ public abstract  class Fahrzeug {
         str += "Bezeichnung: " + this.bezeichnung + "\n";
         str += "PS: " + this.ps + "\n";
         str += "Gewicht: " + this.gewicht + "\n";
+        str += " (in Fuhrpark " + getFuhrpark().getName() + ") ";
         return str;
     }
 }

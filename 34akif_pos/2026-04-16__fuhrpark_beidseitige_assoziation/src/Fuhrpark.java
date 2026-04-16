@@ -1,19 +1,39 @@
 import java.util.ArrayList;
 
 public class Fuhrpark {
+
+
+
+    private String name;
     private ArrayList<Fahrzeug> fahrzeuge;
 
-    public Fuhrpark() {
+
+    public Fuhrpark(String name) throws FuhrparkException {
+        setName(name);
         fahrzeuge = new ArrayList<>();
     }
 
-    public void aufnehmen (Fahrzeug f) throws FuhrparkException {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) throws FuhrparkException {
+        if (name != null && !name.isBlank()) {
+            this.name = name;
+        } else {
+            throw new FuhrparkException("ERROR: ungueltiger Name");
+        }
+    }
+
+    public void aufnehmen(Fahrzeug f) throws FuhrparkException {
         if (f != null) {
-            if (f.getFuhrpark() != null && f.getFuhrpark() != this) {
-                throw new FuhrparkException("ERROR: Fahrzeug befindet sich bereits in einem anderen Fuhrpark");
+            if (f.getFuhrpark() == null) {
+                fahrzeuge.add(f);
+                f.setFuhrpark(this);
+            } else {
+                throw new FuhrparkException("ERROR: Fahrzeug befindet sich bereits in einem Fuhrpark");
             }
-            fahrzeuge.add(f);
-            f.setFuhrpark(this);
+
         } else {
             throw new FuhrparkException("ERROR: Fahrzeug darf nicht Null sein");
         }
@@ -37,7 +57,7 @@ public class Fuhrpark {
     }
 
     public String toString() {
-        String str = "Fuhrpark:";
+        String str = "Fuhrpark: " + getName();
         str += "\n==========\n";
 
         for (Fahrzeug f : fahrzeuge) {

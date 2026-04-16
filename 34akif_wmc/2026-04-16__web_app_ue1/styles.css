@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff8ef;
+    color: #2f2a24;
+}
+
+.page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+input,
+button {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #b8aa98;
+}
+
+button {
+    background: #2a9d8f;
+    color: white;
+    cursor: pointer;
+}
+
+#order-list li {
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 8px;
+}
