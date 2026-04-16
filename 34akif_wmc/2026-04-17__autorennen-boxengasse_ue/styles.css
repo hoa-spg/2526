@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111827;
+    color: #f9fafb;
+}
+
+.page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background: #dc2626;
+    color: white;
+    cursor: pointer;
+}
+
+#race-list li {
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    color: #111827;
+}
+
+.leader {
+    outline: 2px solid #60a5fa;
+}

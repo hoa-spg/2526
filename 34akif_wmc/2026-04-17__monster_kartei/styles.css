@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f6f3ea;
+    color: #1f2933;
+}
+
+.page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.card {
+    min-height: 120px;
+    padding: 16px;
+    border: 2px solid #1f2933;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background: #1f2933;
+    color: white;
+    cursor: pointer;
+}
+
+#history {
+    margin-top: 16px;
+}
