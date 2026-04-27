@@ -1,0 +1,30 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(5, 200px);
+}
+
+
+#a {
+    background-color: red;
+}
+
+#b {
+    background-color: blue;
+}
+
+#c {
+    background-color: green;
+}
+
+#d {
+    background-color: yellow;
+}
+
+#e {
+    background-color: purple;
+}
+
+#f {
+    background-color: orange;
+}

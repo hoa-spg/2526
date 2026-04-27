@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightblue;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: min(100%, 900px);
+}
+
+.columnContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 800px;
+    gap: 2rem;
+    margin: 2rem;
+}
+
+.columnContainer>div {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1.5rem;
+}
+
+.demoArea {
+    width: 50vw;
+    border: 3px solid darkred;
+}
+
+#divA {
+    font-size: 1rem;
+}
+
+#divB {
+    font-size: 0.9rem;
+    padding: 12px;
+}
+
+#divC {
+    font-size: 0.8rem;
+    padding: 0.5em;
+}

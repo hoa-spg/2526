@@ -1,0 +1,45 @@
+/* 
+ * CSS Version 4: Responsive Design & Sticky Navigation
+ * Basiert auf css_v3.css und fügt Media Queries sowie Sticky Navigation hinzu
+ */
+
+@import url('./css_v3.css');
+
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+aside {
+    display: none;
+}
+
+@media (width > 800px) {
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 2rem;
+        padding: 1rem;
+        max-width: 1200px;
+    }
+
+    main>h1 {
+        grid-column: 1/-1;
+    }
+
+    main>section {
+        grid-column: 1/-1;
+    }
+
+    aside {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    #htmlElemente {
+        grid-column: 1/2;
+    }
+
+}

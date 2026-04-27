@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einheiten</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main>
+        <h1>Einheiten</h1>
+        <h2>Absolute Einheiten</h2>
+        <ul>
+            <li>Pixel <code>px</code></li>
+            <li>Millimeter <code>mm</code></li>
+            <li>Zentimeter <code>cm</code></li>
+            <li>Zoll <code>in</code></li>
+            <li>Punkt <code>pt</code></li>
+            <li>Pica <code>pc</code></li>
+        </ul>
+        <p>
+            Absolute Einheiten sollen verwendet werden, wenn eine feste Größe
+            wirklich wichtig ist, zum Beispiel bei Rahmen, Icons oder für den
+            Druck. Für flexible, responsive Layouts und Schriftgrößen sind sie
+            meist weniger geeignet, weil sie sich nicht an andere Kontexte oder
+            Gerätegrößen anpassen.
+        </p>
+
+        <h2>Relative Einheiten</h2>
+        <div class="columnContainer">
+            <div id="emDiv">
+                <h3>em</h3>
+                <div>
+                    <p> Die Einheit em bezieht sich normalerweise auf die
+                        Schriftgröße des aktuellen Elements. Nur wenn em bei
+                        font-size selbst verwendet wird, bezieht es sich auf die
+                        Schriftgröße des Elternelements. 1em entspricht der
+                        Schriftgröße des jeweiligen Referenzelementes. Bsp:
+                        Referenzgröße 16px, dann entspricht 1em ebenfalls
+                        16px.
+                    </p>
+
+                    <p>Die Einheit em wird häufig verwendet, um flexible Layouts
+                        zu erstellen, die sich an die Schriftgröße anpassen.
+                        <code>em</code> ist besonders sinnvoll, wenn sich ein
+                        Abstand oder eine Größe direkt an der lokalen Schriftgröße
+                        eines Bereichs orientieren soll. Weniger geeignet ist
+                        <code>em</code>, wenn sich Werte über viele verschachtelte
+                        Elemente hinweg ungewollt aufmultiplizieren könnten.
+                    </p>
+                </div>
+            </div>
+            <div id="remDiv">
+                <h3>rem</h3>
+                <div>
+                    <p>Die Einheit rem ist relativ zur Schriftgröße des Wurzelelements
+                        <code>html</code>. 1rem entspricht der Schriftgröße des
+                        Wurzelelements. Wenn die Schriftgröße des Wurzelelements
+                        beispielsweise 16px beträgt, dann entspricht 1rem ebenfalls
+                        16px. Wenn die Schriftgröße des Wurzelelements 20px beträgt,
+                        dann entspricht 1rem 20px.
+                    </p>
+
+                    <p>Die Einheit rem wird häufig verwendet, um konsistente
+                        Layouts zu erstellen, die sich an die Schriftgröße des
+                        Wurzelelements anpassen. <code>rem</code> ist meistens die
+                        bessere Wahl für allgemeine Schriftgrößen, Abstände und
+                        Layoutwerte, weil alles gut berechenbar und im ganzen
+                        Dokument einheitlich bleibt. Weniger passend ist
+                        <code>rem</code>, wenn sich ein Wert bewusst an der
+                        Schriftgröße eines konkreten Elternelements orientieren
+                        soll.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="demoArea">
+            <div id="divA">
+                DivA
+                <div id="divB">
+                    DivB
+                    <div id="divC">
+                        DivC
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columnContainer">
+            <div>
+                <h3>vh</h3>
+                <div>
+                    Die Einheit <code>vh</code> bedeutet Viewport Height. 1vh
+                    entspricht 1% der Höhe des sichtbaren Browserfensters. Sie ist
+                    nützlich für Bereiche, die sich an der Bildschirmhöhe
+                    orientieren sollen.
+                </div>
+            </div>
+            <div>
+                <h3>vw</h3>
+                <div>
+                    Die Einheit <code>vw</code> bedeutet Viewport Width. 1vw
+                    entspricht 1% der Breite des sichtbaren Browserfensters. Sie
+                    eignet sich für Layouts, die sich direkt an der verfügbaren
+                    Fensterbreite orientieren.
+                </div>
+            </div>
+        </div>
+
+        <div class="columnContainer">
+            <div>
+                <h3>%</h3>
+                <div>
+                    Prozentangaben sind relativ zum Elternelement. Eine Breite von
+                    <code>50%</code> bedeutet zum Beispiel, dass ein Element die
+                    Hälfte der Breite seines Containers einnimmt. Die Einheit wird
+                    oft für flexible und responsive Layouts verwendet.
+                </div>
+            </div>
+        </div>
+
+        <d </main>
+</body>
+
+</html>
