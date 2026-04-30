@@ -1,6 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,9 +10,9 @@ public class FirmaTest {
     public void testEinfuegen() {
         try {
             Firma firma = new Firma("TestFirma");
-            Angesteller a1 = new Angesteller("Anna", 1980, 25, 40, true);
-            Angesteller a2 = new Angesteller("Ben", 1975, 30, 35, false);
-            Angesteller a3 = new Angesteller("Clara", 1990, 28, 38, true);
+            Angestellter a1 = new Angestellter("Anna", 1980, 25, 40, true);
+            Angestellter a2 = new Angestellter("Ben", 1975, 30, 35, false);
+            Angestellter a3 = new Angestellter("Clara", 1990, 28, 38, true);
             Arbeiter w1 = new Arbeiter("David", 1985, 20, 40, true);
             Arbeiter w2 = new Arbeiter("Eva", 1992, 22, 36, false);
             Arbeiter w3 = new Arbeiter("Frank", 1978, 18, 42, true);
@@ -36,9 +35,9 @@ public class FirmaTest {
     public void testKostenProMonat() {
         try {
             Firma firma = new Firma("TestFirma");
-            Angesteller a1 = new Angesteller("Anna", 1980, 25, 40, true);
-            Angesteller a2 = new Angesteller("Ben", 1975, 30, 35, false);
-            Angesteller a3 = new Angesteller("Clara", 1990, 28, 38, true);
+            Angestellter a1 = new Angestellter("Anna", 1980, 25, 40, true);
+            Angestellter a2 = new Angestellter("Ben", 1975, 30, 35, false);
+            Angestellter a3 = new Angestellter("Clara", 1990, 28, 38, true);
             Arbeiter w1 = new Arbeiter("David", 1985, 20, 40, true);
             Arbeiter w2 = new Arbeiter("Eva", 1992, 22, 36, false);
             Arbeiter w3 = new Arbeiter("Frank", 1978, 18, 42, true);
@@ -84,9 +83,9 @@ public class FirmaTest {
     public void testToString() {
         try {
             Firma firma = new Firma("DemoFirma");
-            firma.einstellen(new Angesteller("Anna", 1980, 25, 40, true));
-            firma.einstellen(new Angesteller("Ben", 1975, 30, 35, false));
-            firma.einstellen(new Angesteller("Clara", 1990, 28, 38, true));
+            firma.einstellen(new Angestellter("Anna", 1980, 25, 40, true));
+            firma.einstellen(new Angestellter("Ben", 1975, 30, 35, false));
+            firma.einstellen(new Angestellter("Clara", 1990, 28, 38, true));
             firma.einstellen(new Arbeiter("David", 1985, 20, 40, true));
             firma.einstellen(new Arbeiter("Eva", 1992, 22, 36, false));
             firma.einstellen(new Arbeiter("Frank", 1978, 18, 42, true));
@@ -106,9 +105,9 @@ public class FirmaTest {
             firma.einstellen(new Arbeiter("Frank", 1978, 18, 42, true));
             firma.einstellen(new Arbeiter("Eva", 1992, 22, 36, false));
 
-            firma.einstellen(new Angesteller("Anna", 1980, 25, 40, true));
-            firma.einstellen(new Angesteller("Clara", 1990, 28, 38, true));
-            firma.einstellen(new Angesteller("Ben", 1975, 30, 35, false));
+            firma.einstellen(new Angestellter("Anna", 1980, 25, 40, true));
+            firma.einstellen(new Angestellter("Clara", 1990, 28, 38, true));
+            firma.einstellen(new Angestellter("Ben", 1975, 30, 35, false));
             List<Mitarbeiter> sortiert = firma.sortierteListe();
             for (Mitarbeiter m : sortiert) {
                 System.out.println(m);
@@ -142,9 +141,9 @@ public class FirmaTest {
     void testSerialize() {
         try {
             Firma firma = new Firma("TestFirma");
-            Angesteller a1 = new Angesteller("Anna", 1980, 25, 40, true);
-            Angesteller a2 = new Angesteller("Ben", 1975, 30, 35, false);
-            Angesteller a3 = new Angesteller("Clara", 1990, 28, 38, true);
+            Angestellter a1 = new Angestellter("Anna", 1980, 25, 40, true);
+            Angestellter a2 = new Angestellter("Ben", 1975, 30, 35, false);
+            Angestellter a3 = new Angestellter("Clara", 1990, 28, 38, true);
             Arbeiter w1 = new Arbeiter("David", 1985, 20, 40, true);
             Arbeiter w2 = new Arbeiter("Eva", 1992, 22, 36, false);
             Arbeiter w3 = new Arbeiter("Frank", 1978, 18, 42, true);
@@ -178,11 +177,11 @@ public class FirmaTest {
         try {
             Firma f = new Firma("Spenger Corp.");
             Mitarbeiter m1 = new Arbeiter("Bob", 1999, 40, 25, true);
-            Angesteller m2 = new Angesteller("Alice", 2001, 45, 25, true);
+            Angestellter m2 = new Angestellter("Alice", 2001, 45, 25, true);
             Praktikant m3 = new Praktikant("Fritz", 2002, 12, 20);
             // weitere Mitarbeiter
             Mitarbeiter m4 = new Arbeiter("Eva", 1995, 30, 30, false);
-            Angesteller m5 = new Angesteller("Clara", 1998, 35, 15, false);
+            Angestellter m5 = new Angestellter("Clara", 1998, 35, 15, false);
             Praktikant m6 = new Praktikant("Tom", 2003, 10, 15);
             f.einstellen(m1);
             f.einstellen(m2);
@@ -202,11 +201,11 @@ public class FirmaTest {
         try {
             Firma f = new Firma("Spenger Corp.");
             Mitarbeiter m1 = new Arbeiter("Bob", 1999, 40, 25, true);
-            Angesteller m2 = new Angesteller("Alice", 2001, 45, 25, true);
+            Angestellter m2 = new Angestellter("Alice", 2001, 45, 25, true);
             Praktikant m3 = new Praktikant("Fritz", 2002, 12, 20);
 
             Mitarbeiter m4 = new Arbeiter("Eva", 1995, 30, 30, false);
-            Angesteller m5 = new Angesteller("Clara", 1998, 35, 15, false);
+            Angestellter m5 = new Angestellter("Clara", 1998, 35, 15, false);
             Praktikant m6 = new Praktikant("Tom", 2003, 10, 15);
             f.einstellen(m1);
             f.einstellen(m2);
