@@ -116,6 +116,13 @@ public class Firma implements Printable, Serializable {
         return sortiert;
     }
 
+    public List<Mitarbeiter> sortierteListeKostenAbsteigend() {
+        List<Mitarbeiter> sortiert = new LinkedList<>(personal);
+        MitarbeiterKostenComparator mkc = new MitarbeiterKostenComparator();
+        Collections.sort(sortiert, mkc);
+        return sortiert.reversed();
+    }
+
     public void serialize(String filename) throws FirmaException {
         if (filename != null && !filename.isBlank()) {
              try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
@@ -157,6 +164,35 @@ public class Firma implements Printable, Serializable {
             bw.write(this.toCsvString());
         } catch (IOException e) {
             throw new FirmaException("Fehler beim Schreiben der Datei", e);
+        }
+    }
+
+    public static Firma readFromFile(String filename) throws FirmaException {
+        Firma f = null;
+        try (FileReader fr = new FileReader(filename);
+             BufferedReader br = new BufferedReader(fr))
+        {
+
+            String line = br.readLine();
+            if (line != null && line.startsWith("Firma: ")) {
+                f = new Firma(line.substring(7));
+            }
+            line = br.readLine();
+            while (line != null) {
+                if (line.startsWith("Angestellter")) {
+                    f.einstellen(new Angestellter(line));
+                } else if (line.startsWith("Arbeiter")) {
+                    f.einstellen(new Arbeiter(line));
+                } else if (line.startsWith("Praktikant")) {
+                    f.einstellen(new Praktikant(line));
+                } else {
+                    throw new FirmaException("Ungueltige Zeile: " + line);
+                }
+                line = br.readLine();
+            }
+            return f;
+        } catch (IOException e) {
+            throw new FirmaException("Fehler beim Lesen der Datei", e);
         }
     }
 

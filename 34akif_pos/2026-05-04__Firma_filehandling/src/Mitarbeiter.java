@@ -25,7 +25,6 @@ public abstract class Mitarbeiter implements Printable, Comparable<Mitarbeiter>,
 
     public Mitarbeiter(String csv) throws FirmaException {
         if (csv != null && !csv.isBlank()) {
-
             // Parameter: Regular Expression (Regulärer Ausdruck)
             String[] tokens = csv.split(";");
             if (tokens.length >= 5) {
@@ -148,6 +147,7 @@ public abstract class Mitarbeiter implements Printable, Comparable<Mitarbeiter>,
         str += ", Stundenlohn: " + getStundenlohn() + " Euro";
         str += ", Anzahl Wochenstunden: " + getAnzahlWochenStunden();
         str += ", Typ: " + this.getClass().getName();
+        str += ", KostenProMonat: " + this.getKostenProMonat();
         return str;
     }
 

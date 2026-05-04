@@ -118,6 +118,30 @@ public class FirmaTest {
         }
     }
 
+
+    @Test
+    public void testSortierteListeKostenAbsteigend() {
+        try {
+            Firma firma = new Firma("DemoFirma");
+            firma.einstellen(new Arbeiter("David", 1985, 20, 40, true));
+            firma.einstellen(new Arbeiter("David", 1981, 25, 40, true));
+
+            firma.einstellen(new Arbeiter("Frank", 1978, 18, 42, true));
+            firma.einstellen(new Arbeiter("Eva", 1992, 22, 36, false));
+
+            firma.einstellen(new Angestellter("Anna", 1980, 25, 40, true));
+            firma.einstellen(new Angestellter("Clara", 1990, 28, 38, true));
+            firma.einstellen(new Angestellter("Ben", 1975, 30, 35, false));
+            List<Mitarbeiter> sortiert = firma.sortierteListeKostenAbsteigend();
+            for (Mitarbeiter m : sortiert) {
+                System.out.println(m);
+            }
+//            System.out.println(firma.toString());
+        } catch (FirmaException e) {
+            System.out.println("FEHLER: " + e.getMessage());
+        }
+    }
+
     @Test
     public void testVorhanden() {
         try {
@@ -197,7 +221,7 @@ public class FirmaTest {
     }
 
     @Test
-    void writeToFile() {
+    void testFileOutputInput() {
         try {
             Firma f = new Firma("Spenger Corp.");
             Mitarbeiter m1 = new Arbeiter("Bob", 1999, 40, 25, true);
@@ -214,6 +238,11 @@ public class FirmaTest {
             f.einstellen(m5);
             f.einstellen(m6);
             f.writeToFile("firma.csv");
+
+            Firma firmaNeu = Firma.readFromFile("firma.csv");
+            assertEquals("Spenger Corp.", firmaNeu.getName());
+            assertEquals(6, firmaNeu.anzahlMitarbeiter());
+            System.out.println("Eingelesen aus Datei: \n" + firmaNeu);
         } catch (FirmaException e) {
             System.out.println("FEHLER: " + e);
         }

@@ -94,4 +94,74 @@ class ArbeiterTest {
             fail("Exception thrown: " + e.getMessage());
         }
     }
+
+    @Test
+    void erzeugeArbeiterMitGueltigemCsvString() {
+        String csv = "Arbeiter;Bob;1995;35;40;Facharbeiter";
+        try {
+            Arbeiter a = new Arbeiter(csv);
+            assertEquals("Bob", a.getName());
+            assertEquals(1995, a.getGeburtsjahr());
+            assertEquals(35, a.getStundenlohn());
+            assertEquals(40, a.getAnzahlWochenStunden());
+            assertTrue(a.isFacharbeiter());
+            System.out.println(a);
+        } catch (FirmaException fe) {
+            fail("FEHLER: Exception wurde trotz gueltigem CSV-String geworfen.");
+            System.out.println("FEHLER: " + fe.getMessage());
+            fe.printStackTrace();
+        }
+    }
+
+    @Test
+    void erzeugeArbeiterMitGueltigemCsvStringHilfsarbeiter() {
+        String csv = "Arbeiter;Lisa;1988;25;30;Hilfsarbeiter";
+        try {
+            Arbeiter a = new Arbeiter(csv);
+            assertEquals("Lisa", a.getName());
+            assertEquals(1988, a.getGeburtsjahr());
+            assertEquals(25, a.getStundenlohn());
+            assertEquals(30, a.getAnzahlWochenStunden());
+            assertFalse(a.isFacharbeiter());
+            System.out.println(a);
+        } catch (FirmaException fe) {
+            fail("FEHLER: Exception wurde trotz gueltigem CSV-String geworfen.");
+            System.out.println("FEHLER: " + fe.getMessage());
+            fe.printStackTrace();
+        }
+    }
+
+    @Test
+    void erzeugeArbeiterMitUngueltigemCsvString() {
+        String csv = "Arbeiter;Bob;neunzehnneunundneunzig;35;40;Facharbeiter";
+        // ..............................AAAAAAAAAAAAA...... ungueltiger Wert!
+        try {
+            Arbeiter a = new Arbeiter(csv);
+            fail("FEHLER: Exception wurde erwartet, aber keine wurde geworfen.");
+        } catch (FirmaException fe) {
+            System.out.println("OK: Exception wurde wie erwartet geworfen: " + fe.getMessage());
+        }
+    }
+
+    @Test
+    void erzeugeArbeiterMitFalschemTyp() {
+        String csv = "Angestellter;Bob;1995;35;40;Facharbeiter";
+        try {
+            Arbeiter a = new Arbeiter(csv);
+            fail("FEHLER: Exception wurde erwartet, aber keine wurde geworfen.");
+        } catch (FirmaException fe) {
+            System.out.println("OK: Exception wurde wie erwartet geworfen: " + fe.getMessage());
+        }
+    }
+
+    @Test
+    void erzeugeArbeiterMitUngueltigemFacharbeiterWert() {
+        String csv = "Arbeiter;Bob;1995;35;40;Meister";
+        try {
+            Arbeiter a = new Arbeiter(csv);
+            fail("FEHLER: Exception wurde erwartet, aber keine wurde geworfen.");
+        } catch (FirmaException fe) {
+            System.out.println("OK: Exception wurde wie erwartet geworfen: " + fe.getMessage());
+        }
+    }
 }
