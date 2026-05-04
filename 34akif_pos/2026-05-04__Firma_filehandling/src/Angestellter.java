@@ -9,28 +9,28 @@ public class Angestellter extends Mitarbeiter {
 
     // Angestellter;Alice;2001;45;25;Überstundenpaschale
     public Angestellter(String csv) throws FirmaException {
-        if (csv != null && !csv.isBlank()) {
-            if (csv.startsWith("Angestellter")) {
-                // Parameter: Regular Expression (Regulärer Ausdruck)
-                String[] tokens = csv.split(";");
-                if (tokens.length >= 6) {
-                    setName(tokens[1]);
-                    try {
-                        int gebJahr = Integer.parseInt(tokens[2]);
-                        setGeburtsjahr(gebJahr);
-                    } catch (NumberFormatException e) {
-                        throw new FirmaException("Ungueltiger Wert für Geburtsjahr in token '" + tokens[2] + "'", e);
-                    }
-                    // TODO
+        super(csv);
+
+        if (csv.startsWith("Angestellter")) {
+            // Parameter: Regular Expression (Regulärer Ausdruck)
+            String[] tokens = csv.split(";");
+            if (tokens.length >= 6) {
+
+                String usp = tokens[5];
+                if (usp != null && usp.equals("Überstundenpaschale")) {
+                    setUeberstundenPauschale(true);
+                } else if (usp != null && usp.equals("keine Überstundenpauschale")) {
+                    setUeberstundenPauschale(false);
                 } else {
-                    throw new FirmaException("Ungueltige Anzahl an Tokens: " + csv);
+                    throw new FirmaException("Ungueltiger Wert für Überstundenpauschale: '" + usp + "'");
                 }
             } else {
-                throw new FirmaException("Ungueltiger csv String, muss Wert 'Angestellter' in erster Spalte haben. csv: " + csv);
+                throw new FirmaException("Ungueltige Anzahl an Tokens: " + csv);
             }
         } else {
-            throw new FirmaException("Parameter csv ist null oder leer.");
+            throw new FirmaException("Ungueltiger csv String, muss Wert 'Angestellter' in erster Spalte haben. csv: " + csv);
         }
+
     }
 
     public Angestellter(String name, int geburtsjahr, int stundenlohn,
