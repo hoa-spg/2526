@@ -1,0 +1,42 @@
+# Serialisierung / Deserialisierung
+
+try with ressources
+
+
+## Serialisierung
+    - ObjectOutputStream
+    - FileOutputStream
+    - Methode serialize in Verwaltungsklasse
+
+## Deserialisierung
+    - ObjectInputStream
+    - FileInputstream
+    - Methode deserialize in Verwaltungsklasse
+
+## Achtung!
+    - Interface Serializable muss implementiert werden
+
+
+
+# FileHandling
+
+## WriteFile
+    - FileWriter
+    - BufferdWriter
+    - In allen beteiligten Klassen: toCsvString
+    - writeToFile in Verwaltungsklasse
+
+## ReadFile
+    - FileReader
+    - BufferedReader
+    - bei allen beteiligten Klassen: Konstruktor der csvString übernimmt
+    - readFromFile in Verwaltungsklasse
+        - Datei Zeile für Zeile einlesen
+        - Untersuchen, welchem Objekt die aktuelle Zeile entspricht
+        - Objekt dieses Typs mit Konstruktor erzeugen
+
+## Allgemein
+    - Beim Einlesen: Anzahl an Tokens prüfen
+    - Bei Modellklassen darauf achten, dass Konstruktoren (csvString) und toCsvString-Methoden
+    die Vererbung korrekt umsetzen
+    - Exception bei Typkonvertierungen fangen und umwandeln
