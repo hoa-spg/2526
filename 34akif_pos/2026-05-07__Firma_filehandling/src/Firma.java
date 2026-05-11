@@ -123,6 +123,7 @@ public class Firma implements Printable, Serializable {
         return sortiert.reversed();
     }
 
+    /*
     public List<Mitarbeiter> sortierteListeMitarbeiterTypUndName() {
         List<Mitarbeiter> sortiert = new LinkedList<>(personal);
 
@@ -134,21 +135,67 @@ public class Firma implements Printable, Serializable {
                 }
                 String t1 = o1.getClass().getName();
                 String t2 = o2.getClass().getName();
-//                if (t1 != t2) {
-//                    return t1.compareTo(t2);
-//                } else {
-//                    return o1.getName().compareTo(o2.getName());
-//                }
+
                 int comp = t1.compareTo(t2);
                 if (comp == 0) {
                     comp = o1.getName().compareTo(o2.getName());
                 }
                 return comp;
-
-                return Comparator.comparing().thenComparing()
             }
         });
-        return sortiert.reversed();
+        return sortiert;
+    }
+     */
+
+    public List<Mitarbeiter> sortierteListeMitarbeiterTypUndName() {
+        List<Mitarbeiter> sortiert = new LinkedList<>(personal);
+
+        Collections.sort(sortiert,  (o1, o2) -> {
+                if (o1 == null || o2 == null) {
+                    throw new NullPointerException("Ungueltiger Mitarbeiter");
+                }
+                String t1 = o1.getClass().getName();
+                String t2 = o2.getClass().getName();
+
+                int comp = t1.compareTo(t2);
+                if (comp == 0) {
+                    comp = o1.getName().compareTo(o2.getName());
+                }
+                return comp;
+            });
+        return sortiert;
+    }
+
+    /*
+    public List<Mitarbeiter> sortierteListeMitarbeiterNameAnzahlWochenstuden() {
+        List<Mitarbeiter> sortiert = new LinkedList<>(personal);
+        Collections.sort(sortiert, (m1, m2) -> {
+            int comp = m1.getName().compareTo(m2.getName());
+            if (comp == 0) {
+                comp = m1.getAnzahlWochenStunden() - m2.getAnzahlWochenStunden();
+            }
+            return comp;
+        });
+        return sortiert;
+    }
+    */
+
+    public List<Mitarbeiter> sortierteListeMitarbeiterNameAnzahlWochenstuden() {
+        List<Mitarbeiter> sortiert = new LinkedList<>(personal);
+        Collections.sort(sortiert, Comparator.comparing(Mitarbeiter::getName)
+                                             .thenComparing(Mitarbeiter::getAnzahlWochenStunden));
+        return sortiert;
+    }
+
+    public List<Mitarbeiter> sortierteListeAnzahlWochenstuden() {
+        List<Mitarbeiter> sortiert = new LinkedList<>(personal);
+        // Mit Comparator mit Methoden-Referenz
+        // Collections.sort(sortiert, Comparator.comparing(Mitarbeiter::getAnzahlWochenStunden));
+
+        // Mit Comparator und Lambda
+        Collections.sort(sortiert, Comparator.comparing(m -> m.getAnzahlWochenStunden()));
+
+        return sortiert;
     }
 
     public void serialize(String filename) throws FirmaException {

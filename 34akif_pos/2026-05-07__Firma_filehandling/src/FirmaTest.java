@@ -142,6 +142,97 @@ public class FirmaTest {
         }
     }
 
+
+    @Test
+    public void testSortierteListeMitarbeiterTypUndName() {
+        try {
+            Firma firma = new Firma("DemoFirma");
+            firma.einstellen(new Arbeiter("David", 1985, 20, 33, true));
+            firma.einstellen(new Arbeiter("David", 1981, 25, 22, true));
+
+            firma.einstellen(new Arbeiter("Frank", 1978, 18, 42, true));
+            firma.einstellen(new Arbeiter("Eva", 1992, 22, 36, false));
+
+            firma.einstellen(new Angestellter("Anna", 1980, 25, 40, true));
+            firma.einstellen(new Angestellter("Clara", 1990, 28, 38, true));
+            firma.einstellen(new Angestellter("Ben", 1975, 30, 35, false));
+            List<Mitarbeiter> sortiert = firma.sortierteListeMitarbeiterTypUndName();
+            for (Mitarbeiter m : sortiert) {
+                System.out.println(m);
+            }
+//            System.out.println(firma.toString());
+        } catch (FirmaException e) {
+            System.out.println("FEHLER: " + e.getMessage());
+        }
+    }
+
+
+    @Test
+    public void testSortierteListeAnzahlWochenstuden() {
+        try {
+            Firma firma = new Firma("DemoFirma");
+            firma.einstellen(new Arbeiter("David", 1985, 20, 33, true));
+            firma.einstellen(new Arbeiter("David", 1981, 25, 22, true));
+
+            firma.einstellen(new Arbeiter("Frank", 1978, 18, 42, true));
+            firma.einstellen(new Arbeiter("Eva", 1992, 22, 36, false));
+
+            firma.einstellen(new Angestellter("Anna", 1980, 25, 40, true));
+            firma.einstellen(new Angestellter("Clara", 1990, 28, 38, true));
+            firma.einstellen(new Angestellter("Ben", 1975, 30, 35, false));
+            List<Mitarbeiter> sortiert = firma.sortierteListeAnzahlWochenstuden();
+            for (Mitarbeiter m : sortiert) {
+                System.out.println(m);
+            }
+        } catch (FirmaException e) {
+            System.out.println("FEHLER: " + e.getMessage());
+        }
+    }
+
+
+    @Test
+    public void testSortierteListeNamenAnzahlWochenstunden() {
+        try {
+            Firma firma = new Firma("DemoFirma");
+            firma.einstellen(new Arbeiter("David", 1985, 20, 33, true));
+            firma.einstellen(new Arbeiter("David", 1981, 25, 22, true));
+
+            firma.einstellen(new Arbeiter("Frank", 1978, 18, 42, true));
+            firma.einstellen(new Arbeiter("Eva", 1992, 22, 36, false));
+
+            firma.einstellen(new Angestellter("Anna", 1980, 25, 40, true));
+            firma.einstellen(new Angestellter("Clara", 1990, 28, 38, true));
+            firma.einstellen(new Angestellter("Ben", 1975, 30, 35, false));
+            List<Mitarbeiter> sortiert = firma.sortierteListeMitarbeiterNameAnzahlWochenstuden();
+            for (Mitarbeiter m : sortiert) {
+                System.out.println(m);
+            }
+//            System.out.println(firma.toString());
+        } catch (FirmaException e) {
+            System.out.println("FEHLER: " + e.getMessage());
+        }
+    }
+
+//    @Test
+//    public void testStreamsAPI() {
+//        try {
+//            Firma firma = new Firma("DemoFirma");
+//            firma.einstellen(new Arbeiter("David", 1985, 20, 40, true));
+//            firma.einstellen(new Arbeiter("David", 1981, 25, 40, true));
+//
+//            firma.einstellen(new Arbeiter("Frank", 1978, 18, 42, true));
+//            firma.einstellen(new Arbeiter("Eva", 1992, 22, 36, false));
+//
+//            firma.einstellen(new Angestellter("Anna", 1980, 25, 40, true));
+//            firma.einstellen(new Angestellter("Clara", 1990, 28, 38, true));
+//            firma.einstellen(new Angestellter("Ben", 1975, 30, 35, false));
+//            double durchschnittsGehaltVollzeit = firma.durchschnittsGehaltVollzeit();
+//
+//        } catch (FirmaException e) {
+//            System.out.println("FEHLER: " + e.getMessage());
+//        }
+//    }
+
     @Test
     public void testVorhanden() {
         try {
