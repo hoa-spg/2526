@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: vaadin-seed
+vaadin:
+  launch-browser: true
