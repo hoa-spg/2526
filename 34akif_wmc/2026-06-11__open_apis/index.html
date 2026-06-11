@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Centered viewport -->
+    <!--<link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">-->
+    <title>Document</title>
+</head>
+<body style="place-items: center;">
+    <button id="fetch-button">Fetch Questions</button>
+    <pre id="output" style="display: none">noch nichts geladen</pre>
+    <ul id="liste">noch nichts geladen</ul>
+<script>
+    const api_url = "https://opentdb.com/api.php?amount=10";
+    const button = document.getElementById("fetch-button");
+    const output = document.getElementById("output");
+    const output_liste = document.getElementById("liste");
+    function getQuestions () {
+        fetch(api_url)
+        .then((response) => {
+            if (!response.ok) {
+                console.error(response);
+                throw new Error ("response not ok")
+            }
+            return response.json();
+        })
+        .then((jsonData) => {
+            output.innerText = JSON.stringify(jsonData, null, 4);
+            const results = jsonData.results;
+            output_liste.innerHTML="";
+            results.forEach(elt => {
+                output_liste.innerHTML += `<li>Frage: ${elt.question} | Richtige Antwort: ${elt.correct_answer}</li>`;
+            });
+        })
+        .catch((e) => {
+            console.error(e);
+            output.innerText = e.message;
+        })
+    }
+    button.addEventListener("click", getQuestions);
+</script>
+</body>
+</html>
